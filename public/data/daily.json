@@ -1,16 +1,16 @@
 {
- "updatedAt": "2026-11-16T07:30:00+05:30",
+ "updatedAt": "2026-11-16T07:55:00+05:30",
  "brief": {
   "date": "Monday, 16 November 2026",
-  "asOf": "Index levels: Friday 13 Nov close · GIFT Nifty: early Monday",
+  "asOf": "Index levels: Friday 13 Nov close · GIFT Nifty: 07:11 IST Monday",
   "indices": [
    {
     "name": "GIFT NIFTY",
-    "val": 25286,
-    "chg": 20,
-    "pct": 0.08,
+    "val": 25206.5,
+    "chg": -59.5,
+    "pct": -0.24,
     "gift": true,
-    "note": "Early Mon · indicates flat-to-positive start"
+    "note": "07:11 IST Mon · 35.5 pts above Nifty Nov futures: flat-to-mildly positive start indicated"
    },
    {
     "name": "NIFTY 50",
@@ -35,33 +35,34 @@
    },
    {
     "name": "INDIA VIX",
-    "val": 15.54,
+    "val": 15.49,
     "chg": null,
-    "pct": -6.5
+    "pct": -11.76
    }
   ],
   "whyLbl": "Friday’s fall ended a three-day rise",
-  "asiaLbl": "Friday 13 Nov close; Monday-morning moves where reported",
+  "asiaLbl": "Friday 13 Nov close; Monday moves as of ~07:11 IST",
   "asia": [
    {
     "n": "Nikkei 225",
     "c": "🇯🇵 Japan",
     "v": "61,142",
     "p": 0.53,
-    "mon": "Mon: opened −0.62% at 60,751"
+    "mon": "Mon 07:11 IST: −1.47%"
    },
    {
     "n": "KOSPI",
     "c": "🇰🇷 South Korea",
     "v": "5,290.53",
     "p": -0.98,
-    "mon": "Mon: −0.2% at 5,279.72 early"
+    "mon": "Mon 07:11 IST: −2.45%"
    },
    {
     "n": "Hang Seng",
     "c": "🇭🇰 Hong Kong",
     "v": "23,637.60",
-    "p": -1.55
+    "p": -1.55,
+    "mon": "Mon 07:11 IST: +0.30%"
    },
    {
     "n": "Shanghai Composite",
@@ -89,7 +90,7 @@
    },
    {
     "b": "~$96",
-    "t": "Brent crude on Middle East supply worries: a bigger import bill for India."
+    "t": "Brent crude near $96 (about $95.65 early Monday) on Middle East supply worries: a bigger import bill for India."
    },
    {
     "b": "₹94.24",
@@ -186,6 +187,21 @@
   ],
   "news": [
    {
+    "c": "Paytm",
+    "t": "Preliminary RBI approval for its payments unit to issue prepaid payment products",
+    "p": null
+   },
+   {
+    "c": "Cochin Shipyard",
+    "t": "Ex-dividend today for ₹3 interim dividend",
+    "p": null
+   },
+   {
+    "c": "T T Ltd",
+    "t": "Board considers a share buyback proposal",
+    "p": null
+   },
+   {
     "c": "Oil India",
     "t": "Q2 standalone profit ₹2,259 cr; ₹7 dividend",
     "p": 116
@@ -232,7 +248,7 @@
    },
    {
     "d": "Wed 18 Nov",
-    "t": "US Fed minutes; Indian IT reacts to Nvidia."
+    "t": "US Fed minutes; Indian IT reacts to Nvidia. Crystal Crop Protection ₹456 cr IPO opens."
    },
    {
     "d": "Thu 19 Nov",
@@ -262,68 +278,68 @@
    }
   ],
   "commodities": {
-   "asOf": "MCX: Friday 13 Nov evening (delayed) · International: week ended 13–14 Nov",
+   "asOf": "MCX: last traded Friday 13 Nov (delayed, read Sun 15 Nov) · International: latest available Monday morning",
    "mcx": [
     {
      "n": "Gold",
      "u": "₹ / 10 g",
-     "v": "₹1,36,699",
-     "p": 0.35
+     "v": "₹1,36,750",
+     "p": 0.39
     },
     {
      "n": "Silver",
      "u": "₹ / kg",
-     "v": "₹1,78,396",
-     "p": -0.18
+     "v": "₹1,76,543",
+     "p": -1.22
     },
     {
      "n": "Crude oil",
      "u": "₹ / barrel",
-     "v": "₹8,352",
-     "p": 0.63
+     "v": "₹8,372",
+     "p": 0.87
     },
     {
      "n": "Copper",
      "u": "₹ / kg",
-     "v": "₹1,316.90",
-     "p": -0.85
+     "v": "₹1,308.55",
+     "p": -1.48
     },
     {
      "n": "Natural gas",
      "u": "₹ / mmBtu",
-     "v": "₹310.30",
-     "p": -0.89
+     "v": "₹307.90",
+     "p": -1.66
     }
    ],
    "intl": [
     {
      "n": "COMEX gold",
-     "u": "$ / oz · week close",
+     "u": "$ / oz",
      "v": "$3,886",
-     "p": null
+     "p": 0.03
     },
     {
      "n": "COMEX silver",
-     "u": "$ / oz · week close",
+     "u": "$ / oz",
      "v": "$49.12",
-     "p": null
+     "p": -1.7
     },
     {
      "n": "Brent crude",
      "u": "$ / barrel",
-     "v": "~$96",
-     "p": null
+     "v": "$95.65",
+     "p": -0.2
     },
     {
      "n": "WTI crude",
      "u": "$ / barrel",
-     "v": "~$88.7",
-     "p": null
+     "v": "$88.56",
+     "p": -0.2
     },
     {
      "n": "USD / INR",
-     "u": "₹ per $",
-     "v": "₹94.2",
+     "u": "₹ per $ · 07:11 IST",
+     "v": "₹94.23",
      "p": null
     }
    ]
@@ -332,10 +348,6 @@
    [
     "TradingView: Asian indices",
     "https://www.tradingview.com/markets/indices/quotes-asia/"
-   ],
-   [
-    "TradingKey: Nikkei, Kospi on 16 Nov 2026",
-    "https://tradingkey.com/analysis/stocks/more/262306068-japan-korea-stocks-skhy-kospi-nikkei-samsung-skhynix-softbank-kioxia-ppi-tradingkey"
    ],
    [
     "Business Standard: market close, 13 Nov 2026",
@@ -358,16 +370,20 @@
     "https://univest.in/blogs/stock-market-prediction-for-tomorrow-2"
    ],
    [
-    "Kotak Neo: GIFT Nifty",
-    "https://www.kotakneo.com/indices/global-indices/gift-nifty/"
-   ],
-   [
     "BhaavBrief: MCX prices",
     "https://bhaavbrief.in/markets"
    ],
    [
     "Goodreturns: gold & silver, 14 Nov 2026",
     "https://www.goodreturns.in/news/gold-rates-silver-rates-today-14-11-2026-live-india-gold-prices-silver-price-mcx-24k-22k-18k-gold-1546939.html"
+   ],
+   [
+    "Quantsapp: GIFT Nifty, 07:11 IST 16 Nov",
+    "https://www.quantsapp.com/gift-nifty"
+   ],
+   [
+    "DSIJ: pre-market update, 16 Nov 2026",
+    "https://insights.dsij.in/dsijarticledetail/pre-market-update-gift-nifty-signals-positive-opening-oil-prices-inflation-and-global-technology-selloff-remain-key-concerns-60450"
    ]
   ]
  },
