@@ -16,7 +16,7 @@
    COLOUR and TYPE: white and soft blue-grey, navy, red, green, gold; Plus Jakarta Sans + Inter
    LAYOUT: tape, masthead, tab bar, one page at a time: home, picks, all tips, commodities, news, record */
 :root{--bg:#f3f6fb;--card:#fff;--ink:#0d1b3d;--mut:#5d6b86;--line:#e2e8f2;--navy:#0b1f4a;--navy2:#13306e;--red:#d7262e;--up:#0f9d58;--dn:#d7262e;--gold:#f0a91c;--goldbg:#fff6e0;--upbg:#e7f7ee;--dnbg:#fdeceb;--r:16px;--sh:0 6px 20px rgba(13,27,61,.07)}
-*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth}
+*{box-sizing:border-box;min-width:0}[hidden]{display:none!important}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
 a{color:inherit}h1,h2,h3,.big{font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif}
 .wrap{width:min(1200px,92%);margin:auto}
@@ -131,6 +131,15 @@ td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 /* asia */
 .asia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
 .as{padding:12px 14px}.as span{display:block;font-size:12.5px;font-weight:700;color:var(--mut)}.as b{display:block;font:800 20px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}.as i{font-style:normal;font-size:13px;font-weight:700}.as em{display:block;font-style:normal;font-size:12px;color:var(--mut);margin-top:2px}
+/* stock news + nse500 */
+.cnews{border-top:1px solid var(--line);padding-top:9px}
+.cnews b{font-size:12.5px;color:var(--navy2);display:block;margin-bottom:4px}
+.cnews a{display:block;font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.35;margin-bottom:6px}.cnews a:hover{color:var(--red)}
+.cnews a span{display:block;font-weight:500;font-size:12px;color:var(--mut)}
+.n5row{cursor:pointer}.n5row:hover td{background:#f7f9fd}
+.badge{font-size:11px;font-weight:800;background:var(--upbg);color:var(--up);padding:2px 8px;border-radius:999px;margin-left:6px;white-space:nowrap}
+.lk a{font-size:12.5px;font-weight:700;color:var(--navy2);margin-right:10px;white-space:nowrap}
+.n5news td{background:#fbfcff}
 /* commodities */
 .cm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .cm div{padding:14px 16px}.cm span{display:block;font-size:12.5px;font-weight:700;color:var(--mut)}.cm b{display:block;font:800 22px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}.cm i{font-style:normal;font-size:13px;font-weight:700}
@@ -169,7 +178,7 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
 </style>
 </head>
 <body>
-<div class="tape"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{"symbols":[{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"FX_IDC:USDINR","title":"USD/INR"},{"proName":"OANDA:XAUUSD","title":"Gold"},{"proName":"OANDA:XAGUSD","title":"Silver"},{"proName":"OANDA:BCOUSD","title":"Brent crude"},{"proName":"OANDA:JP225USD","title":"Nikkei 225"},{"proName":"OANDA:HK33HKD","title":"Hang Seng"},{"proName":"OANDA:CN50USD","title":"China A50"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:NSXUSD","title":"Nasdaq 100"},{"proName":"FOREXCOM:DJI","title":"Dow Jones"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"}],"showSymbolLogo":true,"isTransparent":false,"displayMode":"adaptive","colorTheme":"light","locale":"en"}</script></div></div>
+<div class="tape"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{"symbols":[{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"FX_IDC:USDINR","title":"USD/INR"},{"proName":"OANDA:XAUUSD","title":"Gold"},{"proName":"OANDA:XAGUSD","title":"Silver"},{"proName":"OANDA:BCOUSD","title":"Brent crude"},{"proName":"OANDA:WTICOUSD","title":"WTI crude"},{"proName":"OANDA:JP225USD","title":"Nikkei 225"},{"proName":"OANDA:HK33HKD","title":"Hang Seng"},{"proName":"OANDA:CN50USD","title":"China A50"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:NSXUSD","title":"Nasdaq 100"},{"proName":"FOREXCOM:DJI","title":"Dow Jones"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"}],"showSymbolLogo":true,"isTransparent":false,"displayMode":"adaptive","colorTheme":"light","locale":"en"}</script></div></div>
 
 <header class="mast"><div class="wrap">
   <img src="logo.jpg" alt="BJ’s Share Tips logo">
@@ -178,7 +187,7 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
 </div></header>
 
 <nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs">
-  <a href="#home">Home</a><a href="#picks">Today’s picks</a><a href="#tips">All tips</a><a href="#commodities">Commodities</a><a href="#videos">Videos</a><a href="#news">News</a><a href="#record">Track record</a>
+  <a href="#home">Home</a><a href="#picks">Today’s picks</a><a href="#tips">All tips</a><a href="#nse500">NSE 500</a><a href="#commodities">Commodities</a><a href="#videos">Videos</a><a href="#news">News</a><a href="#record">Track record</a>
 </div></nav>
 
 <main class="wrap">
@@ -195,6 +204,10 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
   </div>
   <div class="idx" id="idx"></div>
   <div class="asof" id="idxAsOf"></div>
+
+  <div class="ph mt"><div><h2>Crude oil &amp; commodities</h2><p class="sub">Live Brent and WTI crude, gold and the rupee, plus MCX crude.</p></div><a class="btn line" href="#commodities">All commodities →</a></div>
+  <div class="card pad" style="padding:8px 10px;min-height:90px"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>{"symbols":[{"proName":"OANDA:BCOUSD","title":"Brent crude ($)"},{"proName":"OANDA:WTICOUSD","title":"WTI crude ($)"},{"proName":"OANDA:NATGASUSD","title":"Natural gas ($)"},{"proName":"OANDA:XAUUSD","title":"Gold ($/oz)"},{"proName":"FX_IDC:USDINR","title":"USD/INR"}],"isTransparent":true,"showSymbolLogo":true,"colorTheme":"light","locale":"en"}</script></div></div>
+  <div class="cm" id="crude" style="margin-top:12px"></div>
 
   <div class="ph mt"><div><h2>Why the market moved</h2><p class="sub" id="whyLbl"></p></div></div>
   <div class="why" id="why"></div>
@@ -236,6 +249,19 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
   <div class="bar"><div id="firms" style="display:flex;flex-wrap:wrap;gap:8px" role="group" aria-label="Filter by research firm"></div>
     <select id="sort" aria-label="Sort tips"><option value="new">Newest first</option><option value="rr">Reward : risk</option><option value="up">Upside to target</option><option value="move">Move since call (live)</option></select></div>
   <div class="cards" id="cards"></div>
+</section>
+
+<!-- NSE 500 -->
+<section class="page" id="p-nse500">
+  <div class="ph"><div><h1>NSE 500 shares</h1><p class="sub" id="n5sub">All Nifty 500 companies with their industry. Search, filter by sector, open a stock’s latest news, or jump to its NSE quote and chart.</p></div></div>
+  <div class="bar">
+    <input id="n5q" type="search" placeholder="Search company or symbol…" aria-label="Search NSE 500" style="min-height:42px;border-radius:999px;border:1px solid var(--line);padding:0 16px;font-size:16px;flex:1 1 240px">
+    <select id="n5ind" aria-label="Filter by industry"><option value="">All industries</option></select>
+    <label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="n5calls"> Only with open research calls</label>
+  </div>
+  <div class="small" id="n5count" style="margin-bottom:8px"></div>
+  <div class="card pad tw"><table class="stack"><thead><tr><th>Symbol</th><th>Company</th><th>Industry</th><th>Links</th></tr></thead><tbody id="n5rows"><tr><td colspan="4">Loading the Nifty 500 list…</td></tr></tbody></table></div>
+  <div class="aa"><button class="btn line" id="n5more" type="button" hidden>Show more</button></div>
 </section>
 
 <!-- COMMODITIES -->
@@ -347,8 +373,8 @@ const istToday=()=>{const d=new Date(Date.now()+(330+new Date().getTimezoneOffse
 let CALLS=[],LIVE={},firm='all',newsRegion='india',token=sessionStorage.getItem('bj_admin_token')||'';
 
 /* ---- router ---- */
-const PAGES=['home','picks','tips','commodities','videos','news','record','admin'];
-function route(){let p=(location.hash||'#home').slice(1);if(!PAGES.includes(p))p='home';PAGES.forEach(x=>$('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));if(p==='news')loadNews();if(p==='videos')loadVideos();if(p==='commodities')loadCmNews();window.scrollTo({top:0})}
+const PAGES=['home','picks','tips','nse500','commodities','videos','news','record','admin'];
+function route(){let p=(location.hash||'#home').slice(1);if(!PAGES.includes(p))p='home';PAGES.forEach(x=>$('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));if(p==='news')loadNews();if(p==='videos')loadVideos();if(p==='nse500')loadN500();if(p==='picks'||p==='tips'||p==='home')loadCardNews();if(p==='commodities')loadCmNews();window.scrollTo({top:0})}
 addEventListener('hashchange',route);
 $('adminOpen').addEventListener('click',()=>{location.hash=location.hash==='#admin'?'#home':'#admin'});
 
@@ -371,7 +397,8 @@ $('cal').innerHTML=BRIEF.cal.map(c=>`<li><time>${c.d}</time><span>${c.t}</span><
 $('levels').innerHTML=BRIEF.levels.map(l=>`<div class="card"><h3>${l.h}</h3><p>${l.t}</p></div>`).join('');
 const C=BRIEF.commodities;$('cmAsOf').textContent=C.asOf+'. Live international prices below.';
 const cmTile=x=>`<div class="card"><span>${x.n}</span><b>${x.v}</b>${x.p!=null?`<i class="${x.p>=0?'pos':'neg'}">${x.p>=0?'▲':'▼'} ${sgn(x.p,2)}</i>`:''}<em>${x.u}</em></div>`;
-$('mcx').innerHTML=C.mcx.map(cmTile).join('');$('intl').innerHTML=C.intl.map(cmTile).join('');
+$('mcx').innerHTML=C.mcx.map(cmTile).join('');
+$('crude').innerHTML=[...C.intl.filter(x=>/brent|wti/i.test(x.n)),...C.mcx.filter(x=>/crude|natural/i.test(x.n)).map(x=>({...x,n:'MCX '+x.n.toLowerCase()}))].map(cmTile).join('');$('intl').innerHTML=C.intl.map(cmTile).join('');
 
 /* ---- calls ---- */
 function sources(){const seen=new Map();CALLS.forEach(c=>{if(c.publisher&&httpUrl(c.sourceUrl)&&!seen.has(c.publisher))seen.set(c.publisher,c)});$('srcList').innerHTML=[...[...seen.values()].map(c=>[`${c.publisher}${c.publisherReg?' (SEBI RA '+c.publisherReg+')':''}`,c.sourceUrl]),...BRIEF.sources].map(([t,u])=>`<li><a href="${safe(u)}" target="_blank" rel="noopener noreferrer">${safe(t)}</a></li>`).join('')}
@@ -388,6 +415,7 @@ function card(c){
   <div class="rr"><span>Upside <b class="pos">${up.toFixed(1)}%</b></span><span>Risk <b class="neg">${dn.toFixed(1)}%</b></span><span>Reward : risk <b>${(up/dn).toFixed(1)} : 1</b></span></div>
   ${liveHtml}
   <div class="tf"><span>Time frame: <b>${safe(tfText(c))}</b></span><span>Valid till <b>${till(c)}</b></span></div>
+  <div class="cnews" data-q="${safe(c.stock)}"></div>
   <div class="src">${c.publisher?`By ${httpUrl(c.sourceUrl)?`<a href="${safe(c.sourceUrl)}" target="_blank" rel="noopener noreferrer">${safe(c.publisher)}</a>`:safe(c.publisher)}${c.publisherReg?' · SEBI RA '+safe(c.publisherReg):''}`:'Publisher not supplied'}</div></article>`}
 function render(){
   const open=CALLS.filter(c=>c.status==='open');
@@ -406,7 +434,7 @@ function render(){
   const closed=recent.filter(c=>ret(c)!=null),avg=closed.length?closed.reduce((s,c)=>s+ret(c),0)/closed.length:null;
   $('sum').innerHTML=[['Calls · 30 days',recent.length],['Target hit',recent.filter(c=>c.status==='target').length],['Stop-loss hit',recent.filter(c=>c.status==='sl').length],['Still open',recent.filter(c=>c.status==='open').length],['Avg return, closed',avg==null?'—':sgn(avg)]].map(([k,v])=>`<div class="card"><span>${k}</span><b>${v}</b></div>`).join('');
   $('trk').innerHTML=recent.length?recent.map(c=>{const r=ret(c),L=liveFor(c);const nowR=c.status==='open'&&L?((c.side!=='SELL'?L.p-c.entry:c.entry-L.p)/c.entry*100):null;return `<tr><td data-l="Date">${fmtDate(c.date)}</td><td data-l="Stock"><b>${safe(c.stock)}</b><br><span class="small">${safe(firmShort(c.publisher))}</span></td><td data-l="Call">${safe(c.side)}</td><td data-l="Time frame">${safe(c.timeframe)}${till(c)==='Not stated'?'':' · till '+till(c)}</td><td class="r" data-l="Entry">${money(c.entry)}</td><td class="r" data-l="Now / exit">${c.status==='open'?(L?money(L.p):'—'):money(c.exit)}</td><td class="r ${r!=null?(r>=0?'pos':'neg'):nowR!=null?(nowR>=0?'pos':'neg'):''}" data-l="Return">${r!=null?sgn(r,2):nowR!=null?sgn(nowR,1)+' (open)':'—'}</td><td data-l="Outcome"><span class="st ${safe(c.status)}">${labels[c.status]||'Unknown'}</span></td></tr>`}).join(''):'<tr><td colspan="8">No calls in the last 30 days.</td></tr>';
-  sources();if(token)renderAdmin();
+  sources();if(token)renderAdmin();loadCardNews();
 }
 $('firms').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(b){firm=b.dataset.f;render()}});
 $('sort').addEventListener('change',render);
@@ -429,6 +457,27 @@ async function pull(){
   }catch(e){}
 }
 setInterval(()=>{if(mktOpen())pull()},60000);
+
+/* ---- latest news per stock (Google News, publisher links) ---- */
+const SNEWS=new Map();
+async function stockNews(q){if(!SNEWS.has(q))SNEWS.set(q,fetch('/api/news?region=stock&q='+encodeURIComponent(q)).then(r=>r.ok?r.json():{articles:[]}).then(d=>d.articles||[]).catch(()=>[]));return SNEWS.get(q)}
+const newsMini=a=>a.length?'<b>Latest news</b>'+a.slice(0,3).map(x=>`<a href="${httpUrl(x.url)?safe(x.url):'#'}" target="_blank" rel="noopener noreferrer">${safe(x.title)}<span>${safe(x.source||'News')} · ${safe(newsDate(x.publishedAt))}</span></a>`).join(''):'';
+function loadCardNews(){document.querySelectorAll('.page.on .cnews[data-q]:not([data-done])').forEach(async el=>{el.dataset.done=1;el.innerHTML='<b>Latest news</b><span class="small">Loading…</span>';const a=await stockNews(el.dataset.q.replace(/\s*\(.*\)\s*/,''));el.innerHTML=newsMini(a)||'';if(!a.length)el.remove()})}
+
+/* ---- NSE 500 ---- */
+let N5=null,n5shown=60;
+const callSet=()=>new Set(CALLS.filter(c=>c.status==='open'&&c.symbol).map(c=>c.symbol.toUpperCase()));
+async function loadN500(){if(!N5){try{const r=await fetch('/api/nifty500');const d=await r.json();if(!r.ok)throw Error(d.error);N5=d;const inds=[...new Set(d.stocks.map(x=>x.i).filter(Boolean))].sort();$('n5ind').innerHTML='<option value="">All industries ('+d.count+')</option>'+inds.map(i=>`<option>${safe(i)}</option>`).join('');$('n5sub').textContent=`All ${d.count} Nifty 500 companies from the official NSE Indices list${d.cached?' (saved copy)':''}. Search, filter by sector, tap a row for its latest news, or jump to its NSE quote and chart.`}catch(e){$('n5rows').innerHTML='<tr><td colspan="4">The Nifty 500 list could not be loaded right now. Please try again later.</td></tr>';return}}renderN500()}
+function renderN500(){if(!N5)return;const q=$('n5q').value.trim().toLowerCase(),ind=$('n5ind').value,only=$('n5calls').checked,cs=callSet();
+  const list=N5.stocks.filter(x=>(!q||x.n.toLowerCase().includes(q)||x.s.toLowerCase().includes(q))&&(!ind||x.i===ind)&&(!only||cs.has(x.s.toUpperCase())));
+  $('n5count').textContent=`${list.length} of ${N5.count} companies`;
+  $('n5rows').innerHTML=list.slice(0,n5shown).map(x=>`<tr class="n5row" data-s="${safe(x.s)}" data-n="${safe(x.n)}"><td data-l="Symbol"><b>${safe(x.s)}</b>${cs.has(x.s.toUpperCase())?'<span class="badge">Open call</span>':''}</td><td data-l="Company">${safe(x.n)}</td><td data-l="Industry">${safe(x.i)}</td><td data-l="Links" class="lk"><a href="https://www.nseindia.com/get-quotes/equity?symbol=${encodeURIComponent(x.s)}" target="_blank" rel="noopener noreferrer">NSE</a><a href="https://www.tradingview.com/symbols/NSE-${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Chart</a><a href="https://www.screener.in/company/${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Financials</a></td></tr>`).join('')||'<tr><td colspan="4">No companies match.</td></tr>';
+  $('n5more').hidden=list.length<=n5shown}
+['n5q','n5ind','n5calls'].forEach(id=>$(id).addEventListener(id==='n5q'?'input':'change',()=>{n5shown=60;renderN500()}));
+$('n5more').addEventListener('click',()=>{n5shown+=100;renderN500()});
+$('n5rows').addEventListener('click',async e=>{if(e.target.closest('a'))return;const tr=e.target.closest('.n5row');if(!tr)return;const nx=tr.nextElementSibling;if(nx&&nx.classList.contains('n5news')){nx.remove();return}
+  const row=document.createElement('tr');row.className='n5news';row.innerHTML='<td colspan="4"><div class="cnews"><b>Latest news</b><span class="small">Loading…</span></div></td>';tr.after(row);
+  const a=await stockNews(tr.dataset.n.replace(/ Ltd\.?$| Limited$/i,''));row.querySelector('.cnews').innerHTML=newsMini(a)||'<span class="small">No recent news found.</span>'});
 
 /* ---- videos ---- */
 let VIDS=null,vSel=0;
