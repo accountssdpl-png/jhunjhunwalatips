@@ -91,3 +91,33 @@ If no such brand exists, skip and mention it in the summary. Never post to other
 ## 7. Report
 Send a short summary: what was published (new calls with firm names, outcomes changed, video length),
 the YouTube link, the Facebook status, and anything skipped and why.
+
+---
+
+# 8:50 AM run: "आज के 2 रिसर्च कॉल्स" (1-minute video)
+
+Starts ~8:33 AM IST on weekdays; video live on the site and YouTube by ~8:50 AM. Skip on NSE holidays.
+
+1. Setup as in section 0 (`git pull`, `bash automation/video/setup.sh`).
+2. Pick the two calls **objectively, never by our own judgement**: from `public/data/daily.json` → `calls`, take open
+   calls with a publisher, SEBI RA number, source URL and stop-loss, sorted by `date` newest first, and take the first two
+   (also quickly check the sources listed in section 1 for calls published since the morning run; if found, add them to
+   `daily.json` per section 2 first). Never rank by upside or reward:risk. If fewer than two qualify, use one; if none, skip.
+3. Write `/tmp/tips.json` with `slot:"tips"` and 4 scenes (target 45–60 s total):
+   - `intro`: kicker = Hindi weekday + date, title `आज के *2 रिसर्च कॉल्स*`, subtitle `SEBI-रजिस्टर्ड फर्मों से`,
+     bullets `["📌 एंट्री · 🎯 टारगेट · 🛑 स्टॉप-लॉस","⚠️ जानकारी मात्र · निवेश सलाह नहीं"]`, short vo.
+   - one `call` scene per call: kicker `कॉल 1 · <time frame in Hindi>`, title `*<stock in Hindi>*`, fields
+     stock, symbol, exchange, side, timeframe, entry (or buy range, with `entryLabel:"बाय रेंज"`), target, sl, firm, reg,
+     date (call date). vo ≤ 16 s: "<firm> का कॉल … रिको प्राइस …, टारगेट …, स्टॉप लॉस … रुपये।" Say the call date if not today.
+   - `outro`: url `jhunjhunwalatips.netlify.app`, disclaimer
+     `ये कॉल्स SEBI-रजिस्टर्ड फर्मों के हैं, हमारे नहीं। यह सिर्फ जानकारी है, निवेश सलाह नहीं। निवेश से पहले मूल रिपोर्ट देखें और स्टॉप-लॉस ज़रूर लगाएं।`
+   See `automation/video/example_tips.json`.
+4. `python3 automation/video/make_video.py /tmp/tips.json public/videos` → `<date>-tips.mp4`.
+5. Add to the top of `public/data/videos.json` (`slot:"tips"`, title `आज के 2 रिसर्च कॉल्स · <date>`, English summary
+   naming the stocks and firms), commit, push to main.
+6. YouTube (pre-approved by the owner, @bjstips / `UCZeKehKnTpwSsvGhs8yJCZg` only): as section 5, with
+   title `आज के 2 रिसर्च कॉल्स | <date in Hindi> | <Stock 1>, <Stock 2> | BJ's Share Tips #Shorts` (≤100 chars),
+   description: one line per call ("<Stock>: BUY, entry …, target …, stop-loss … — <firm>, SEBI RA …, <date>. Source: <url>"),
+   site link, the disclaimer from section 5 plus "These calls are by the SEBI-registered firms named above, not by BJ's Share Tips.",
+   hashtags `#Shorts #StockMarketIndia #Nifty50 #BJsShareTips #ShareMarket`.
+7. Report: the two calls and firms, video length, YouTube link.
