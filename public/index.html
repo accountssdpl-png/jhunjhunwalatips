@@ -257,10 +257,11 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
   <div class="bar">
     <input id="n5q" type="search" placeholder="Search company or symbol…" aria-label="Search NSE 500" style="min-height:42px;border-radius:999px;border:1px solid var(--line);padding:0 16px;font-size:16px;flex:1 1 240px">
     <select id="n5ind" aria-label="Filter by industry"><option value="">All industries</option></select>
+    <select id="n5sort" aria-label="Sort"><option value="">A–Z</option><option value="up">Top gainers</option><option value="dn">Top losers</option><option value="px">Price high → low</option></select>
     <label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="n5calls"> Only with open research calls</label>
   </div>
-  <div class="small" id="n5count" style="margin-bottom:8px"></div>
-  <div class="card pad tw"><table class="stack"><thead><tr><th>Symbol</th><th>Company</th><th>Industry</th><th>Links</th></tr></thead><tbody id="n5rows"><tr><td colspan="4">Loading the Nifty 500 list…</td></tr></tbody></table></div>
+  <div class="small" id="n5count" style="margin-bottom:2px"></div><div class="small" id="n5live" style="margin-bottom:8px;color:var(--muted)">Loading live prices…</div>
+  <div class="card pad tw"><table class="stack"><thead><tr><th>Symbol</th><th>Company</th><th class="r">Price ₹</th><th class="r">Change</th><th>Industry</th><th>Links</th></tr></thead><tbody id="n5rows"><tr><td colspan="6">Loading the Nifty 500 list…</td></tr></tbody></table></div>
   <div class="aa"><button class="btn line" id="n5more" type="button" hidden>Show more</button></div>
 </section>
 
@@ -441,7 +442,7 @@ $('sort').addEventListener('change',render);
 
 /* ---- api ---- */
 async function api(url,opts={}){const h={'Content-Type':'application/json',...(opts.headers||{})};if(token)h.Authorization='Bearer '+token;const r=await fetch(url,{...opts,headers:h});let data={};try{data=await r.json()}catch{}if(r.status===401&&token&&!url.endsWith('/auth')){token='';sessionStorage.removeItem('bj_admin_token');setAuth(false)}if(!r.ok)throw Error(data.error||'Request failed ('+r.status+')');return data}
-async function load(){try{let admin=[];try{const d=await api('/api/calls');admin=Array.isArray(d.calls)?d.calls:[]}catch(e){console.error(e)}const byId=new Map();[...(DAILY.calls||[]),...admin].forEach(c=>byId.set(c.id,c));CALLS=[...byId.values()].map(c=>({...c,entry:+c.entry,target:+c.target,stopLoss:+c.stopLoss,target2:c.target2==null?null:+c.target2,exit:c.exit==null?null:+c.exit}));render();pull()}catch(e){['todayCards','cards','homePicks'].forEach(id=>$(id).innerHTML='<div class="empty">Unable to load picks. Please refresh shortly.</div>');console.error(e)}}
+async function load(){try{let admin=[];try{const d=await api('/api/calls');admin=Array.isArray(d.calls)?d.calls:[]}catch(e){console.error(e)}const byId=new Map();[...(DAILY.calls||[]),...admin].forEach(c=>byId.set(c.id,c));CALLS=[...byId.values()].map(c=>({...c,entry:+c.entry,target:+c.target,stopLoss:+c.stopLoss,target2:c.target2==null?null:+c.target2,exit:c.exit==null?null:+c.exit}));render();pull();pullLive()}catch(e){['todayCards','cards','homePicks'].forEach(id=>$(id).innerHTML='<div class="empty">Unable to load picks. Please refresh shortly.</div>');console.error(e)}}
 
 /* ---- live prices (needs EODHD_API_TOKEN on Netlify) ---- */
 const ist=()=>new Date(Date.now()+(330+new Date().getTimezoneOffset())*60000);
@@ -458,6 +459,18 @@ async function pull(){
 }
 setInterval(()=>{if(mktOpen())pull()},60000);
 
+
+/* ---- live prices for all Nifty 500 + picks (NSE, fallback Yahoo) ---- */
+let LV=null;
+const n5px=s=>{const q=LV&&LV.quotes[s.toUpperCase()];if(!q||q.p==null)return '<td class="r" data-l="Price">—</td><td class="r" data-l="Change">—</td>';const cl=q.pc==null?'':q.pc>=0?'pos':'neg';return `<td class="r" data-l="Price"><b>${q.p.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})}</b></td><td class="r ${cl}" data-l="Change">${q.pc==null?'—':(q.pc>=0?'+':'')+q.pc.toFixed(2)+'%'}</td>`};
+function liveNote(){if(!LV)return '';const t=LV.asOf?new Date(LV.source==='NSE'?LV.asOf.replace(/(\d+)-(\w+)-(\d+)/,'$2 $1 $3')+' GMT+0530':LV.asOf):null;const tm=t&&!isNaN(t)?t.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}):'';return `${mktOpen()?'Live':'Last'} prices from ${LV.source}${tm?' · as of '+tm+' IST':''}${LV.source==='NSE'?'':' · may be delayed'}${mktOpen()?' · refreshes every minute':' · market closed'}`}
+async function pullLive(){try{const ex=[...new Set(CALLS.filter(c=>c.symbol&&c.exchange!=='BSE').map(c=>c.symbol.toUpperCase()))].sort().join(',');
+  const r=await fetch('/api/live?extra='+encodeURIComponent(ex));if(!r.ok)return;LV=await r.json();
+  for(const [k,q] of Object.entries(LV.quotes))LIVE[k+'.NSE']={code:k+'.NSE',price:q.p,chg:q.c,pct:q.pc};
+  $('live').classList.add('ok');$('liveTxt').textContent=liveNote();if($('n5live'))$('n5live').textContent=liveNote();
+  render();if(N5&&$('p-nse500').classList.contains('on'))renderN500()}catch(e){console.error(e)}}
+setInterval(()=>{if(mktOpen()&&!document.hidden)pullLive()},60000);
+
 /* ---- latest news per stock (Google News, publisher links) ---- */
 const SNEWS=new Map();
 async function stockNews(q){if(!SNEWS.has(q))SNEWS.set(q,fetch('/api/news?region=stock&q='+encodeURIComponent(q)).then(r=>r.ok?r.json():{articles:[]}).then(d=>d.articles||[]).catch(()=>[]));return SNEWS.get(q)}
@@ -467,16 +480,17 @@ function loadCardNews(){document.querySelectorAll('.page.on .cnews[data-q]:not([
 /* ---- NSE 500 ---- */
 let N5=null,n5shown=60;
 const callSet=()=>new Set(CALLS.filter(c=>c.status==='open'&&c.symbol).map(c=>c.symbol.toUpperCase()));
-async function loadN500(){if(!N5){try{const r=await fetch('/api/nifty500');const d=await r.json();if(!r.ok)throw Error(d.error);N5=d;const inds=[...new Set(d.stocks.map(x=>x.i).filter(Boolean))].sort();$('n5ind').innerHTML='<option value="">All industries ('+d.count+')</option>'+inds.map(i=>`<option>${safe(i)}</option>`).join('');$('n5sub').textContent=`All ${d.count} Nifty 500 companies from the official NSE Indices list${d.cached?' (saved copy)':''}. Search, filter by sector, tap a row for its latest news, or jump to its NSE quote and chart.`}catch(e){$('n5rows').innerHTML='<tr><td colspan="4">The Nifty 500 list could not be loaded right now. Please try again later.</td></tr>';return}}renderN500()}
+async function loadN500(){if(!N5){try{const r=await fetch('/api/nifty500');const d=await r.json();if(!r.ok)throw Error(d.error);N5=d;const inds=[...new Set(d.stocks.map(x=>x.i).filter(Boolean))].sort();$('n5ind').innerHTML='<option value="">All industries ('+d.count+')</option>'+inds.map(i=>`<option>${safe(i)}</option>`).join('');$('n5sub').textContent=`All ${d.count} Nifty 500 companies from the official NSE Indices list${d.cached?' (saved copy)':''}. Search, filter by sector, tap a row for its latest news, or jump to its NSE quote and chart.`}catch(e){$('n5rows').innerHTML='<tr><td colspan="6">The Nifty 500 list could not be loaded right now. Please try again later.</td></tr>';return}}renderN500()}
 function renderN500(){if(!N5)return;const q=$('n5q').value.trim().toLowerCase(),ind=$('n5ind').value,only=$('n5calls').checked,cs=callSet();
   const list=N5.stocks.filter(x=>(!q||x.n.toLowerCase().includes(q)||x.s.toLowerCase().includes(q))&&(!ind||x.i===ind)&&(!only||cs.has(x.s.toUpperCase())));
+  const so=$('n5sort').value,gq=s=>LV&&LV.quotes[s.toUpperCase()];if(so)list.sort((a,b)=>{const A=gq(a.s),B=gq(b.s),v=q=>q?(so==='px'?q.p:q.pc):null,x=v(A),y=v(B);if(x==null)return 1;if(y==null)return -1;return so==='dn'?x-y:y-x});
   $('n5count').textContent=`${list.length} of ${N5.count} companies`;
-  $('n5rows').innerHTML=list.slice(0,n5shown).map(x=>`<tr class="n5row" data-s="${safe(x.s)}" data-n="${safe(x.n)}"><td data-l="Symbol"><b>${safe(x.s)}</b>${cs.has(x.s.toUpperCase())?'<span class="badge">Open call</span>':''}</td><td data-l="Company">${safe(x.n)}</td><td data-l="Industry">${safe(x.i)}</td><td data-l="Links" class="lk"><a href="https://www.nseindia.com/get-quotes/equity?symbol=${encodeURIComponent(x.s)}" target="_blank" rel="noopener noreferrer">NSE</a><a href="https://www.tradingview.com/symbols/NSE-${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Chart</a><a href="https://www.screener.in/company/${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Financials</a></td></tr>`).join('')||'<tr><td colspan="4">No companies match.</td></tr>';
+  $('n5rows').innerHTML=list.slice(0,n5shown).map(x=>`<tr class="n5row" data-s="${safe(x.s)}" data-n="${safe(x.n)}"><td data-l="Symbol"><b>${safe(x.s)}</b>${cs.has(x.s.toUpperCase())?'<span class="badge">Open call</span>':''}</td><td data-l="Company">${safe(x.n)}</td>${n5px(x.s)}<td data-l="Industry">${safe(x.i)}</td><td data-l="Links" class="lk"><a href="https://www.nseindia.com/get-quotes/equity?symbol=${encodeURIComponent(x.s)}" target="_blank" rel="noopener noreferrer">NSE</a><a href="https://www.tradingview.com/symbols/NSE-${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Chart</a><a href="https://www.screener.in/company/${encodeURIComponent(x.s)}/" target="_blank" rel="noopener noreferrer">Financials</a></td></tr>`).join('')||'<tr><td colspan="6">No companies match.</td></tr>';
   $('n5more').hidden=list.length<=n5shown}
-['n5q','n5ind','n5calls'].forEach(id=>$(id).addEventListener(id==='n5q'?'input':'change',()=>{n5shown=60;renderN500()}));
+['n5q','n5ind','n5calls','n5sort'].forEach(id=>$(id).addEventListener(id==='n5q'?'input':'change',()=>{n5shown=60;renderN500()}));
 $('n5more').addEventListener('click',()=>{n5shown+=100;renderN500()});
 $('n5rows').addEventListener('click',async e=>{if(e.target.closest('a'))return;const tr=e.target.closest('.n5row');if(!tr)return;const nx=tr.nextElementSibling;if(nx&&nx.classList.contains('n5news')){nx.remove();return}
-  const row=document.createElement('tr');row.className='n5news';row.innerHTML='<td colspan="4"><div class="cnews"><b>Latest news</b><span class="small">Loading…</span></div></td>';tr.after(row);
+  const row=document.createElement('tr');row.className='n5news';row.innerHTML='<td colspan="6"><div class="cnews"><b>Latest news</b><span class="small">Loading…</span></div></td>';tr.after(row);
   const a=await stockNews(tr.dataset.n.replace(/ Ltd\.?$| Limited$/i,''));row.querySelector('.cnews').innerHTML=newsMini(a)||'<span class="small">No recent news found.</span>'});
 
 /* ---- videos ---- */
