@@ -43,6 +43,10 @@ def dircls(d):
     return "up" if d == "up" else "dn" if d == "dn" else "gold"
 
 
+def x_get(sc, k, d=""):
+    return sc.get(k) or d
+
+
 def body(sc):
     t, it = sc["type"], sc.get("items", [])
     note = f'<div class="note">{esc(sc["note"])}</div>' if sc.get("note") else ""
@@ -71,6 +75,12 @@ def body(sc):
     if t == "levels":
         return '<div class="lvls">' + "".join(
             f'<div class="{esc(r.get("kind","now"))}"><span>{esc(r["label"])}</span>' + "".join(f"<b>{esc(v)}</b>" for v in r.get("values", [])) + "</div>" for r in sc.get("rows", [])) + "</div>" + note
+    if t == "call":
+        side = esc(x_get(sc, "side", "BUY")).upper()
+        return (f'<div class="call"><div class="ch"><b>{esc(sc.get("stock"))}</b><span class="sd {"sell" if side=="SELL" else ""}">{side}</span></div>'
+                f'<div class="cm">{esc(sc.get("exchange","NSE"))}: {esc(sc.get("symbol"))} · {esc(sc.get("timeframe"))}</div>'
+                f'<div class="lv"><div><span>{esc(sc.get("entryLabel","रिको प्राइस"))}</span><b>{esc(sc.get("entry"))}</b></div><div class="ctg"><span>टारगेट</span><b>{esc(sc.get("target"))}</b></div><div class="csl"><span>स्टॉप-लॉस</span><b>{esc(sc.get("sl"))}</b></div></div>'
+                f'<div class="src">स्रोत: {esc(sc.get("firm"))}<br>SEBI RA {esc(sc.get("reg"))} · {esc(sc.get("date"))}</div></div>' + note)
     if t == "outro":
         return f'<div class="url">{esc(sc.get("url"))}</div><div class="disc">{esc(sc.get("disclaimer"))}</div><img class="heroimg" src="logo.jpg">'
     raise ValueError("unknown scene type " + t)
@@ -103,13 +113,18 @@ h1{font:800 104px/1.08 M;margin:30px 0 44px}h1 em{font-style:normal;color:#f2bd4
 .lvls{display:grid;gap:22px}.lvls div{border-radius:28px;padding:26px 44px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 40px}.lvls span{width:100%;font:800 38px M}.lvls b{font:700 88px G}
 .res{background:rgba(255,93,108,.12);border:2px solid rgba(255,93,108,.5)}.res span,.res b{color:#ff8a95}.now{background:rgba(242,189,69,.14);border:2px solid rgba(242,189,69,.6)}.now span,.now b{color:#f2bd45}.sup{background:rgba(47,209,122,.12);border:2px solid rgba(47,209,122,.5)}.sup span,.sup b{color:#5fe39a}
 .url{font:700 58px G;color:#0b1430;background:linear-gradient(135deg,#ffd77a,#f2bd45);border-radius:999px;padding:24px 40px;text-align:center;margin:10px 0 40px}.disc{font:500 40px/1.5 M;color:#c9d3ea}
+.call{background:rgba(255,255,255,.06);border:2px solid rgba(242,189,69,.45);border-radius:34px;padding:40px 44px}
+.ch{display:flex;justify-content:space-between;align-items:center;gap:20px}.ch b{font:800 76px/1.1 M}.sd{font:700 44px G;background:#2fd17a;color:#04140b;border-radius:999px;padding:8px 30px}.sd.sell{background:#ff5d6c;color:#fff}
+.cm{font:500 38px M;color:#aab6d3;margin:10px 0 30px}
+.call .lv{display:grid;grid-template-columns:1fr;gap:18px}.call .lv div{display:flex;justify-content:space-between;align-items:baseline;background:rgba(0,0,0,.25);border-radius:22px;padding:22px 30px}.call .lv span{font:800 40px M;color:#c9d3ea}.call .lv b{font:700 72px G}.call .lv .ctg b{color:#2fd17a}.call .lv .csl b{color:#ff5d6c}
+.src{margin-top:30px;font:500 36px/1.5 M;color:#f2bd45}
 .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.12);padding-top:30px;font:500 32px M;color:#93a3c4}.dots{display:flex;gap:10px}.dots i{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.2)}.dots i.a{background:#f2bd45;width:44px;border-radius:8px}"""
 
 
 def build_html(c, workdir):
     S = c["scenes"]
     out = "<!doctype html><meta charset=utf-8><style>" + CSS.replace("url(F/", "url(file://" + F + "/") + "</style>"
-    sub = "सुबह की मार्केट खबर" if c.get("slot") == "morning" else "शाम की मार्केट खबर"
+    sub = {"morning": "सुबह की मार्केट खबर", "evening": "शाम की मार्केट खबर", "tips": "आज के 2 रिसर्च कॉल्स"}.get(c.get("slot"), "मार्केट खबर")
     for i, sc in enumerate(S):
         dots = "".join(f'<i class="{"a" if j == i else ""}"></i>' for j in range(len(S)))
         light = " light" if sc["type"] == "intro" else ""

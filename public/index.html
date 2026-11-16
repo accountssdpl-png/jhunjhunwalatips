@@ -253,7 +253,7 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
 
 <!-- VIDEOS -->
 <section class="page" id="p-videos">
-  <div class="ph"><div><h1>Market videos</h1><p class="sub">Hindi market updates every trading day at 8 AM (before the bell) and 6 PM (after the close).</p></div></div>
+  <div class="ph"><div><h1>Market videos</h1><p class="sub">Hindi market updates every trading day: 8 AM before the bell, 8:50 AM two research calls in 1 minute, and 6 PM after the close.</p></div></div>
   <div class="vmain" id="vMain"><div class="empty">Loading videos…</div></div>
   <h2 style="font-size:20px;margin:24px 0 10px">Earlier videos</h2>
   <div class="vgrid" id="vList"></div>
@@ -432,13 +432,13 @@ setInterval(()=>{if(mktOpen())pull()},60000);
 
 /* ---- videos ---- */
 let VIDS=null,vSel=0;
-const slotName=s=>s==='evening'?'Evening · 6 PM':'Morning · 8 AM';
+const slotName=s=>s==='evening'?'Evening · 6 PM':s==='tips'?'2 research calls · 8:50 AM':'Morning · 8 AM';
 function showVideo(i){vSel=i;const v=VIDS[i];if(!v)return;
   $('vMain').innerHTML=`<video controls playsinline preload="metadata" poster="${safe(v.poster)}" src="${safe(v.file)}"></video><div class="vmeta"><span class="tag">${slotName(v.slot)} · ${longDate(v.date)}</span><h2>${safe(v.title)}</h2><p class="sub">${safe(v.summary||'')}</p><p class="small">${Math.round((v.seconds||0)/60)} min · Hindi · For information only, not investment advice.</p></div>`;
   document.querySelectorAll('.vcard').forEach((c,j)=>c.setAttribute('aria-current',j===i))}
 async function loadVideos(){if(!VIDS){try{const r=await fetch('/data/videos.json',{cache:'no-store'});VIDS=((await r.json()).videos||[]).sort((a,b)=>(b.date+b.slot).localeCompare(a.date+a.slot))}catch(e){VIDS=[]}}
   if(!VIDS.length){$('vMain').innerHTML='<div class="empty">No videos yet.</div>';$('vList').innerHTML='';return}
-  $('vList').innerHTML=VIDS.map((v,i)=>`<button class="vcard" type="button" data-v="${i}"><img src="${safe(v.poster)}" alt="" loading="lazy"><div>${fmtDate(v.date)} · ${v.slot==='evening'?'6 PM':'8 AM'}</div></button>`).join('');
+  $('vList').innerHTML=VIDS.map((v,i)=>`<button class="vcard" type="button" data-v="${i}"><img src="${safe(v.poster)}" alt="" loading="lazy"><div>${fmtDate(v.date)} · ${v.slot==='evening'?'6 PM':v.slot==='tips'?'2 calls':'8 AM'}</div></button>`).join('');
   showVideo(vSel)}
 $('vList').addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(b){showVideo(+b.dataset.v);$('vMain').scrollIntoView({behavior:'smooth'})}});
 

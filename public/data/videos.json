@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-16",
+   "slot": "tips",
+   "title": "आज के 2 रिसर्च कॉल्स · 16 नवंबर 2026",
+   "summary": "Two latest open calls from a SEBI-registered firm: Waaree Energies and Blue Star (Anand Rathi, 13 Nov), with entry, target and stop-loss.",
+   "file": "/videos/2026-11-16-tips.mp4",
+   "poster": "/videos/2026-11-16-tips.jpg",
+   "seconds": 49
+  },
+  {
+   "date": "2026-11-16",
    "slot": "morning",
    "title": "सुबह की मार्केट खबर · सोमवार, 16 नवंबर 2026",
    "summary": "Friday's close, GIFT Nifty and Asia this morning, US tech selloff, FII buying, Q2 results, stocks in news, IPOs, this week's events and key levels.",
