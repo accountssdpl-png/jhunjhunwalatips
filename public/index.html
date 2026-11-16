@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1f4a">
+<meta name="description" content="BJ's Share Tips: today's research picks from SEBI-registered firms, commodities, market news and a public 30-day track record.">
+<title>BJ’s Share Tips | Today’s picks, markets, commodities &amp; news</title>
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: bright, trustworthy financial daily; every call credited
+   IDEA: the logo's colours on paper: navy ink, ribbon red, bull green, ring gold
+   PICTURE: navy masthead with the logo, white cards with coloured price rails
+   COLOUR and TYPE: white and soft blue-grey, navy, red, green, gold; Plus Jakarta Sans + Inter
+   LAYOUT: tape, masthead, tab bar, one page at a time: home, picks, all tips, commodities, news, record */
+:root{--bg:#f3f6fb;--card:#fff;--ink:#0d1b3d;--mut:#5d6b86;--line:#e2e8f2;--navy:#0b1f4a;--navy2:#13306e;--red:#d7262e;--up:#0f9d58;--dn:#d7262e;--gold:#f0a91c;--goldbg:#fff6e0;--upbg:#e7f7ee;--dnbg:#fdeceb;--r:16px;--sh:0 6px 20px rgba(13,27,61,.07)}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}h1,h2,h3,.big{font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif}
+.wrap{width:min(1200px,92%);margin:auto}
+.btn,button,select,input{font-family:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* tape + masthead */
+.tape{background:#fff;border-bottom:1px solid var(--line);min-height:46px}
+.mast{background:linear-gradient(120deg,#0b1f4a,#13306e 60%,#1b3f8f);color:#fff;border-bottom:4px solid var(--red)}
+.mast .wrap{display:flex;align-items:center;gap:16px;padding:14px 0}
+.mast img{width:84px;height:56px;object-fit:cover;border-radius:10px;border:2px solid var(--gold)}
+.mast b{display:block;font:800 22px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.01em}
+.mast small{color:#c9d6f2;font-size:13px}
+.mast .adm{margin-left:auto}
+@media(max-width:520px){.mast small{display:none}.mast img{width:66px;height:44px}.mast b{font-size:19px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;border:1px solid transparent;white-space:nowrap}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:#b81d24}
+.btn.line{background:#fff;border-color:var(--line);color:var(--ink)}.btn.line:hover{border-color:var(--navy)}
+.btn.glass{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(13,27,61,.05)}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}.tabs .wrap::-webkit-scrollbar{display:none}
+.tabs a{flex-shrink:0;text-decoration:none;font-weight:700;font-size:15px;color:var(--mut);padding:14px 14px 12px;border-bottom:3px solid transparent;white-space:nowrap}
+.tabs a:hover{color:var(--navy)}.tabs a.on{color:var(--red);border-color:var(--red)}
+/* pages */
+.page{display:none;padding:26px 0 56px}.page.on{display:block}
+.ph{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.025em;margin:0}
+h2{font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0}
+h3{font-size:18px;margin:0}
+.sub{color:var(--mut);margin:6px 0 0;max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.pad{padding:18px 20px}
+.pos{color:var(--up)}.neg{color:var(--dn)}
+.grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}@media(max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.stackv{display:grid;gap:16px}
+.mt{margin-top:22px}
+.small{font-size:13px;color:var(--mut)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center;background:linear-gradient(135deg,#fff,#eef3ff 60%,#fff4dc);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3.6vw,40px);box-shadow:var(--sh)}
+.hero .kick{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--red);background:var(--dnbg);padding:6px 12px;border-radius:999px}
+.hero h1{margin:12px 0 10px}.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{color:#33415f;margin:0 0 18px;max-width:56ch}
+.hero .logo{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 18px 40px rgba(11,31,74,.25);border:3px solid var(--gold)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+@media(max-width:820px){.hero{grid-template-columns:minmax(0,1fr)}.hero .logo{order:-1;max-width:460px}}
+/* index strip */
+.idx{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}
+.ix{padding:14px 16px}.ix span{display:block;font-size:12.5px;font-weight:700;color:var(--mut);letter-spacing:.02em}
+.ix b{display:block;font:800 clamp(20px,2.2vw,26px) 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}
+.ix i{font-style:normal;font-weight:700;font-size:13.5px;white-space:nowrap}
+.ix.gift{background:var(--goldbg);border-color:#f4d48a}
+@media(max-width:900px){.idx{grid-template-columns:repeat(2,minmax(0,1fr))}.idx .ix:first-child{grid-column:1/-1}}
+.asof{font-size:12.5px;color:var(--mut);margin-top:8px}
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.why div{padding:16px 18px;border-left:5px solid var(--red)}.why div.g{border-left-color:var(--up)}
+.why b{display:block;font:800 26px 'Plus Jakarta Sans',Inter,sans-serif}.why p{margin:2px 0 0;font-size:14.5px;color:#33415f}
+@media(max-width:820px){.why{grid-template-columns:minmax(0,1fr)}}
+/* bars */
+.board{display:grid;gap:7px}.grp{font-size:12px;font-weight:800;color:var(--red);margin:10px 0 2px;letter-spacing:.03em}
+.row{display:grid;grid-template-columns:minmax(92px,130px) minmax(0,1fr) 60px;align-items:center;gap:10px;font-size:14px}
+.row .v{text-align:right;font-weight:800;white-space:nowrap}
+.track{position:relative;height:16px;background:linear-gradient(var(--line),var(--line)) 50% 0/2px 100% no-repeat}
+.b{position:absolute;top:2px;height:12px;border-radius:3px}.b.up{left:50%;background:var(--up)}.b.dn{right:50%;background:var(--dn)}
+.flows .row{grid-template-columns:64px minmax(0,1fr) 92px}.flows .track{background:#eef2f8;border-radius:4px}.flows .b{left:0;top:0;height:16px}
+.tot{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.tot div{font-size:12.5px;color:var(--mut)}.tot b{display:block;font:800 20px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}
+/* calls */
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.chip{min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:600;font-size:14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bar select{min-height:40px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:0 14px;font-weight:600;font-size:14px;margin-left:auto}
+.live{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);margin:-2px 0 14px}
+.live i{width:9px;height:9px;border-radius:50%;background:#b4bfd3}.live.ok i{background:var(--up);box-shadow:0 0 0 4px rgba(15,157,88,.18)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:14px}
+.call{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:16px 18px;display:flex;flex-direction:column;gap:11px;border-top:4px solid var(--up)}
+.call.SELL{border-top-color:var(--dn)}
+.ct{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.call h3{font-size:20px;line-height:1.2}
+.meta{font-size:13px;color:var(--mut);margin-top:2px}
+.side{font-weight:800;font-size:12.5px;padding:5px 12px;border-radius:999px;color:#fff;background:var(--up);white-space:nowrap}.side.SELL{background:var(--dn)}
+.lv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.lv div{background:#f6f8fc;border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+.lv span{display:block;font-size:11.5px;color:var(--mut);font-weight:600}.lv b{display:block;font:800 16px 'Plus Jakarta Sans',Inter,sans-serif;overflow-wrap:anywhere;line-height:1.25}
+.lv .t b{color:var(--up)}.lv .s b{color:var(--dn)}
+.rr{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--mut);flex-wrap:wrap}.rr b{color:var(--ink)}
+.rail{position:relative;height:8px;border-radius:4px;margin:6px 0 2px;background:linear-gradient(90deg,#f2a4a7 0 var(--e,40%),#9ad9b6 var(--e,40%) 100%)}
+.rail .dot{position:absolute;top:-6px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.3)}
+.ends{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.lp{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;font-size:14px}.lp b{font:800 19px 'Plus Jakarta Sans',Inter,sans-serif}
+.tag{font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap}.tag.hit{background:var(--upbg);color:var(--up)}.tag.sl{background:var(--dnbg);color:var(--dn)}
+.tf{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;border-top:1px solid var(--line);padding-top:10px;color:var(--mut)}.tf b{color:var(--ink)}
+.src{font-size:12.5px;color:var(--mut);margin-top:auto}.src a{color:var(--navy2);font-weight:700}
+.empty{padding:26px;text-align:center;border:1px dashed #c6d0e1;border-radius:var(--r);color:var(--mut);background:#fff}
+.notice{background:var(--goldbg);border:1px solid #f4d48a;border-radius:14px;padding:12px 16px;font-size:14px;color:#5a4206;margin-bottom:14px}
+/* tables */
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--mut);font-weight:700;background:#f7f9fd}
+td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.st{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.st.open{background:var(--goldbg);color:#9a6400}.st.target{background:var(--upbg);color:var(--up)}.st.sl{background:var(--dnbg);color:var(--dn)}.st.expired{background:#eef1f6;color:var(--mut)}
+@media(max-width:640px){.stack thead{display:none}.stack tr{display:grid;padding:10px 0;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:4px 0;text-align:right}.stack td::before{content:attr(data-l);color:var(--mut);text-align:left;font-weight:600}.row{grid-template-columns:86px minmax(0,1fr) 52px;font-size:13px}}
+.sumg{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.sumg div{padding:12px 14px;font-size:12.5px;color:var(--mut)}.sumg b{display:block;font:800 24px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--ink)}
+@media(max-width:760px){.sumg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* calendar, levels */
+.cal{list-style:none;margin:0;padding:0}.cal li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.cal li:last-child{border:0}
+.cal time{font-weight:800;color:var(--red);white-space:nowrap}
+.lvl{display:grid;gap:10px}.lvl div{padding:13px 16px}.lvl h3{font-size:16px;margin-bottom:2px}.lvl p{margin:0;font-size:14px;color:#33415f}
+/* asia */
+.asia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
+.as{padding:12px 14px}.as span{display:block;font-size:12.5px;font-weight:700;color:var(--mut)}.as b{display:block;font:800 20px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}.as i{font-style:normal;font-size:13px;font-weight:700}.as em{display:block;font-style:normal;font-size:12px;color:var(--mut);margin-top:2px}
+/* commodities */
+.cm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cm div{padding:14px 16px}.cm span{display:block;font-size:12.5px;font-weight:700;color:var(--mut)}.cm b{display:block;font:800 22px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}.cm i{font-style:normal;font-size:13px;font-weight:700}
+.cm em{display:block;font-style:normal;font-size:11.5px;color:var(--mut)}
+@media(max-width:900px){.cm{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tv{min-height:420px;overflow:hidden}
+/* news */
+.ntabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.ni{padding:12px 0;border-bottom:1px solid var(--line)}.ni:last-child{border:0}
+.ni a{text-decoration:none;font-weight:600;line-height:1.45;display:block;overflow-wrap:anywhere}.ni a:hover{color:var(--red)}
+.nm{font-size:12.5px;color:var(--mut);margin-top:2px}
+.muted{color:var(--mut);padding:14px 0}
+/* admin */
+.ag{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ag label{display:block;font-size:12.5px;color:var(--mut);font-weight:700}
+.ag input,.ag select,#adminPassword{width:100%;margin-top:4px;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:16px;background:#fff;color:var(--ink)}
+.aa{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.amsg{font-size:14px;color:var(--red);margin:10px 0;font-weight:600}
+.danger{background:var(--dnbg);color:var(--dn);border-color:#f5c2c4}
+@media(max-width:760px){.ag{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.ag{grid-template-columns:minmax(0,1fr)}}
+footer{background:var(--navy);color:#c9d6f2;padding:30px 0 40px;font-size:14px}
+footer h3{color:#fff;margin:0 0 8px}footer p{margin:0 0 10px;max-width:92ch}footer a{color:#ffd27a}
+footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:26px}@media(max-width:820px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:no-preference){.call{transition:transform .18s ease,box-shadow .18s ease}.call:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(13,27,61,.12)}}
+</style>
+</head>
+<body>
+<div class="tape"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{"symbols":[{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"FX_IDC:USDINR","title":"USD/INR"},{"proName":"OANDA:XAUUSD","title":"Gold"},{"proName":"OANDA:XAGUSD","title":"Silver"},{"proName":"OANDA:BCOUSD","title":"Brent crude"},{"proName":"OANDA:JP225USD","title":"Nikkei 225"},{"proName":"OANDA:HK33HKD","title":"Hang Seng"},{"proName":"OANDA:CN50USD","title":"China A50"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:NSXUSD","title":"Nasdaq 100"},{"proName":"FOREXCOM:DJI","title":"Dow Jones"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"}],"showSymbolLogo":true,"isTransparent":false,"displayMode":"adaptive","colorTheme":"light","locale":"en"}</script></div></div>
+
+<header class="mast"><div class="wrap">
+  <img src="logo.jpg" alt="BJ’s Share Tips logo">
+  <div><b>BJ’s Share Tips</b><small id="mastDate">Markets · Picks · Commodities · News</small></div>
+  <button class="btn glass adm" id="adminOpen" type="button">Admin</button>
+</div></header>
+
+<nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs">
+  <a href="#home">Home</a><a href="#picks">Today’s picks</a><a href="#tips">All tips</a><a href="#commodities">Commodities</a><a href="#news">News</a><a href="#record">Track record</a>
+</div></nav>
+
+<main class="wrap">
+<!-- HOME -->
+<section class="page" id="p-home">
+  <div class="hero">
+    <div>
+      <span class="kick" id="heroKick">Market brief</span>
+      <h1>Today’s picks from <em>SEBI-registered</em> research firms, tracked in public.</h1>
+      <p>Every call credited to its source, with entry, target, stop-loss and time frame. Plus the morning market brief, commodities and the latest news.</p>
+      <div class="ctas"><a class="btn red" href="#picks">See today’s picks</a><a class="btn line" href="#commodities">Commodities</a><a class="btn line" href="#news">Latest news</a></div>
+    </div>
+    <img class="logo" src="logo.jpg" alt="BJ’s Share Tips: green bull and rising chart in a gold ring" width="1536" height="1024">
+  </div>
+  <div class="idx" id="idx"></div>
+  <div class="asof" id="idxAsOf"></div>
+
+  <div class="ph mt"><div><h2>Why the market moved</h2><p class="sub" id="whyLbl"></p></div></div>
+  <div class="why" id="why"></div>
+
+  <div class="ph mt"><div><h2>Asian markets</h2><p class="sub" id="asiaLbl"></p></div></div>
+  <div class="grid2">
+    <div class="asia" id="asia"></div>
+    <div class="card pad tv" style="min-height:360px"><h3 style="margin-bottom:6px">Live Asia (index CFDs)</h3><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>{"colorTheme":"light","dateRange":"1D","showChart":true,"locale":"en","width":"100%","height":"340","isTransparent":true,"showSymbolLogo":true,"showFloatingTooltip":true,"plotLineColorGrowing":"#0f9d58","plotLineColorFalling":"#d7262e","belowLineFillColorGrowing":"rgba(15,157,88,0.12)","belowLineFillColorFalling":"rgba(215,38,46,0.12)","belowLineFillColorGrowingBottom":"rgba(15,157,88,0)","belowLineFillColorFallingBottom":"rgba(215,38,46,0)","symbolActiveColor":"rgba(240,169,28,0.15)","tabs":[{"title":"Asia","symbols":[{"s":"OANDA:JP225USD","d":"Japan 225 (Nikkei)"},{"s":"OANDA:HK33HKD","d":"Hong Kong 33 (Hang Seng)"},{"s":"OANDA:CN50USD","d":"China A50"},{"s":"OANDA:TWIXUSD","d":"Taiwan index"},{"s":"OANDA:SG30SGD","d":"Singapore 30"},{"s":"OANDA:AU200AUD","d":"Australia 200"}]}]}</script></div></div>
+  </div>
+
+  <div class="ph mt"><div><h2>Today’s picks</h2><p class="sub">Latest calls from SEBI-registered firms.</p></div><a class="btn line" href="#picks">All of today’s picks →</a></div>
+  <div class="cards" id="homePicks"></div>
+
+  <div class="grid2 mt">
+    <div class="stackv">
+      <div class="card pad"><h3>The week in one board</h3><p class="small" style="margin:2px 0 6px" id="weekLbl"></p><div class="board" id="board"></div></div>
+      <div class="card pad flows"><h3>Who was buying</h3><p class="small" style="margin:2px 0 8px">FII net buying, ₹ crore, cash market</p><div class="board" id="fii"></div><div class="tot" id="tot"></div></div>
+    </div>
+    <div class="stackv">
+      <div class="card pad"><h3>This week’s calendar</h3><ul class="cal" id="cal"></ul></div>
+      <div class="lvl" id="levels"></div>
+    </div>
+  </div>
+  <div class="card pad mt"><h3>Stocks in the news</h3><p class="small" style="margin:2px 0 6px">Recent results, listed as news, not as picks.</p>
+    <table class="stack"><thead><tr><th>Company</th><th>What was reported</th><th class="r">Profit</th></tr></thead><tbody id="snews"></tbody></table></div>
+</section>
+
+<!-- TODAY'S PICKS -->
+<section class="page" id="p-picks">
+  <div class="ph"><div><h1>Today’s picks</h1><p class="sub">Calls published by SEBI-registered research firms on the latest trading day. BJ’s Share Tips reports them for information and issues no calls of its own. Check the original before acting.</p></div></div>
+  <div class="notice" id="picksNote" hidden></div>
+  <div class="live" id="live"><i></i><span id="liveTxt">Showing call-date prices. Live prices appear when the price feed is connected.</span></div>
+  <div class="cards" id="todayCards"></div>
+</section>
+
+<!-- ALL TIPS -->
+<section class="page" id="p-tips">
+  <div class="ph"><div><h1>All open tips</h1><p class="sub">Every open call from SEBI-registered firms, with time frame and validity. Filter by firm or sort by reward-to-risk.</p></div></div>
+  <div class="bar"><div id="firms" style="display:flex;flex-wrap:wrap;gap:8px" role="group" aria-label="Filter by research firm"></div>
+    <select id="sort" aria-label="Sort tips"><option value="new">Newest first</option><option value="rr">Reward : risk</option><option value="up">Upside to target</option><option value="move">Move since call (live)</option></select></div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<!-- COMMODITIES -->
+<section class="page" id="p-commodities">
+  <div class="ph"><div><h1>Commodities</h1><p class="sub" id="cmAsOf"></p></div></div>
+  <h2 style="font-size:20px;margin-bottom:10px">MCX (India)</h2>
+  <div class="cm" id="mcx"></div>
+  <h2 style="font-size:20px;margin:22px 0 10px">International</h2>
+  <div class="cm" id="intl"></div>
+  <div class="grid2 mt">
+    <div class="card pad tv"><h3 style="margin-bottom:8px">Live international prices</h3><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>{"colorTheme":"light","dateRange":"1D","showChart":true,"locale":"en","width":"100%","height":"400","isTransparent":true,"showSymbolLogo":true,"showFloatingTooltip":true,"plotLineColorGrowing":"#0f9d58","plotLineColorFalling":"#d7262e","belowLineFillColorGrowing":"rgba(15,157,88,0.12)","belowLineFillColorFalling":"rgba(215,38,46,0.12)","belowLineFillColorGrowingBottom":"rgba(15,157,88,0)","belowLineFillColorFallingBottom":"rgba(215,38,46,0)","symbolActiveColor":"rgba(240,169,28,0.15)","tabs":[{"title":"Metals","symbols":[{"s":"OANDA:XAUUSD","d":"Gold ($/oz)"},{"s":"OANDA:XAGUSD","d":"Silver ($/oz)"},{"s":"OANDA:XCUUSD","d":"Copper"},{"s":"OANDA:XPTUSD","d":"Platinum"}]},{"title":"Energy","symbols":[{"s":"OANDA:BCOUSD","d":"Brent crude"},{"s":"OANDA:WTICOUSD","d":"WTI crude"},{"s":"OANDA:NATGASUSD","d":"Natural gas"}]},{"title":"Currency","symbols":[{"s":"FX_IDC:USDINR","d":"USD/INR"},{"s":"FX:EURUSD","d":"EUR/USD"}]}]}</script></div></div>
+    <div class="card pad"><h3>Commodity news</h3><div id="cmNews" class="muted">Loading headlines…</div></div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="page" id="p-news">
+  <div class="ph"><div><h1>Latest market news</h1><p class="sub">Headlines refreshed every five minutes. Links open the publisher.</p></div><button class="btn line" id="refreshNews" type="button">↻ Refresh</button></div>
+  <div class="ntabs" id="ntabs" role="group" aria-label="News category">
+    <button class="chip" data-n="india" aria-pressed="true">India markets</button><button class="chip" data-n="global" aria-pressed="false">Global</button><button class="chip" data-n="commodities" aria-pressed="false">Commodities</button><button class="chip" data-n="ipo" aria-pressed="false">IPO</button>
+  </div>
+  <div class="card pad" id="newsList"><div class="muted">Loading headlines…</div></div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="page" id="p-record">
+  <div class="ph"><div><h1>30-day track record</h1><p class="sub">Every call from the last 30 days with its outcome, hit or missed. Returns are counted once a call is closed with an exit price.</p></div></div>
+  <div class="sumg" id="sum"></div>
+  <div class="card pad tw"><table class="stack"><thead><tr><th>Date</th><th>Stock</th><th>Call</th><th>Time frame</th><th class="r">Entry</th><th class="r">Now / exit</th><th class="r">Return</th><th>Outcome</th></tr></thead><tbody id="trk"></tbody></table></div>
+</section>
+
+<!-- ADMIN -->
+<section class="page" id="p-admin"><div class="card pad">
+  <div class="ph"><div><h1>Admin</h1><p class="sub">Add, edit and close tracked calls. Only add calls published by SEBI-registered firms, with registration number and source link. Calls dated today appear under Today’s picks.</p></div><button class="btn line" id="logoutBtn" type="button">Log out</button></div>
+  <div id="loginBox"><label class="small">Admin password <input id="adminPassword" type="password" autocomplete="current-password"></label><div class="aa"><button class="btn red" id="loginBtn" type="button">Sign in</button></div><p class="amsg" id="loginMsg" aria-live="polite"></p></div>
+  <div id="editorBox" hidden>
+    <form id="callForm"><input type="hidden" id="callId">
+      <div class="ag">
+        <label>Call date<input id="fDate" type="date" required></label>
+        <label>Stock name<input id="fStock" required maxlength="100"></label>
+        <label>NSE symbol<input id="fSymbol" maxlength="30" placeholder="RELIANCE"></label>
+        <label>Exchange<select id="fExchange"><option>NSE</option><option>BSE</option></select></label>
+        <label>Side<select id="fSide"><option>BUY</option><option>SELL</option></select></label>
+        <label>Time frame<select id="fTime"><option>Intraday</option><option>BTST</option><option>Short term</option><option>Positional</option><option>30 days</option><option>Long term (till next Diwali)</option></select></label>
+        <label>Entry / reco price<input id="fEntry" type="number" min="0.01" step="0.01" required></label>
+        <label>Buy range (optional)<input id="fRange" maxlength="40" placeholder="417–427"></label>
+        <label>Target 1<input id="fTarget" type="number" min="0.01" step="0.01" required></label>
+        <label>Target 2 (optional)<input id="fTarget2" type="number" min="0.01" step="0.01"></label>
+        <label>Stop-loss<input id="fSL" type="number" min="0.01" step="0.01" required></label>
+        <label>Current price (optional)<input id="fCMP" type="number" min="0" step="0.01"></label>
+        <label>Status<select id="fStatus"><option value="open">Open</option><option value="target">Target hit</option><option value="sl">Stop-loss hit</option><option value="expired">Time expired</option></select></label>
+        <label>Exit price (optional)<input id="fExit" type="number" min="0" step="0.01"></label>
+        <label>Publisher<input id="fSource" maxlength="120"></label>
+        <label>SEBI RA reg. no.<input id="fReg" maxlength="30" placeholder="INH000000000"></label>
+        <label>Source URL<input id="fUrl" type="url" placeholder="https://"></label>
+        <label>Note (optional)<input id="fNote" maxlength="160" placeholder="Stop-loss on closing basis"></label>
+      </div>
+      <div class="aa"><button class="btn red" type="submit">Save call</button><button class="btn line" id="resetForm" type="button">Clear form</button></div>
+    </form>
+    <p class="amsg" id="adminMessage" aria-live="polite"></p>
+    <div class="tw"><table><thead><tr><th>Stock</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead><tbody id="adminRows"></tbody></table></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap fgrid">
+  <div><h3>Important information</h3>
+    <p>BJ’s Share Tips is a call-tracking and information website. It is not a SEBI-registered investment adviser or research analyst and issues no buy or sell recommendations of its own. Picks shown here are calls published by the SEBI-registered research firms credited on each card. SEBI registration does not guarantee performance or returns.</p>
+    <p>Investments in the securities market are subject to market risks. Read all related documents carefully before investing. Calls do not consider your finances or risk profile; trade only with a stop-loss and money you can afford to lose. Past results do not indicate future performance. Prices may be delayed; verify with your broker before trading.</p></div>
+  <div><h3>Sources</h3><ul id="srcList"></ul></div>
+</div></footer>
+
+<script>
+'use strict';
+{
+/* Daily data lives in /data/daily.json (brief + published calls). Admin-added calls come from /api/calls. */
+(async()=>{
+let DAILY={brief:null,calls:[]};
+try{const r=await fetch('/data/daily.json',{cache:'no-store'});if(r.ok)DAILY=await r.json()}catch(e){console.error(e)}
+const BRIEF=DAILY.brief;
+if(!BRIEF){document.querySelector('main').insertAdjacentHTML('afterbegin','<div class="empty" style="margin-top:20px">Market data could not be loaded. Please refresh.</div>');return}
+
+const $=id=>document.getElementById(id);
+const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr=(n,d=2)=>Number(n).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});
+const money=(n,d=2)=>n==null||n===''||!isFinite(n)?'—':'₹'+inr(n,d);
+const sgn=(v,d=1)=>(v>=0?'+':'−')+Math.abs(v).toFixed(d)+'%';
+const D=s=>new Date(s+'T00:00:00');
+const fmtDate=s=>s?D(s).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'—';
+const longDate=s=>D(s).toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+const labels={open:'Open',target:'Target hit',sl:'Stop-loss hit',expired:'Time expired'};
+const httpUrl=u=>/^https?:\/\//i.test(u||'');
+const ret=c=>c.exit==null||!isFinite(+c.exit)?null:((c.side==='BUY'?(c.exit-c.entry):(c.entry-c.exit))/c.entry)*100;
+const addTD=(s,n)=>{const d=D(s);let k=0;while(k<n){d.setDate(d.getDate()+1);const w=d.getDay();if(w&&w<6)k++}return d};
+const TF={"Intraday":0,"BTST":1,"Short term":10,"30 days":21,"Positional":null,"Long term (till next Diwali)":null};
+const till=c=>/Diwali/.test(c.timeframe)?'Next Diwali':TF[c.timeframe]==null?'Not stated':addTD(c.date,TF[c.timeframe]).toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+const tfText=c=>({"Intraday":"Same day, square off by 3:15 PM","BTST":"Buy today, exit next trading day","Short term":"Up to 10 trading days","30 days":"30 days, as stated by source","Positional":"Positional; holding period not stated","Long term (till next Diwali)":"Until next Diwali (about 1 year)"})[c.timeframe]||c.timeframe;
+const firmShort=p=>String(p||'').replace(/ (Share and Stock Brokers )?Ltd.*$/,'').replace(/ Limited$/,'')||'Unattributed';
+const istToday=()=>{const d=new Date(Date.now()+(330+new Date().getTimezoneOffset())*60000);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+
+let CALLS=[],LIVE={},firm='all',newsRegion='india',token=sessionStorage.getItem('bj_admin_token')||'';
+
+/* ---- router ---- */
+const PAGES=['home','picks','tips','commodities','news','record','admin'];
+function route(){let p=(location.hash||'#home').slice(1);if(!PAGES.includes(p))p='home';PAGES.forEach(x=>$('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));if(p==='news')loadNews();if(p==='commodities')loadCmNews();window.scrollTo({top:0})}
+addEventListener('hashchange',route);
+$('adminOpen').addEventListener('click',()=>{location.hash=location.hash==='#admin'?'#home':'#admin'});
+
+/* ---- static brief ---- */
+$('mastDate').textContent='Market brief · '+BRIEF.date;$('heroKick').textContent='Market brief · '+BRIEF.date;
+const idxHtml=()=>BRIEF.indices.map(m=>{const q=m.sym&&LIVE[m.sym];const v=q&&q.price!=null?q.price:m.val,c=q&&q.chg!=null?q.chg:m.chg,p=q&&q.pct!=null?q.pct:m.pct,u=p>=0;return `<div class="card ix${m.gift?' gift':''}"><span>${m.name}${q?' · live':''}</span><b>${inr(v,m.gift?0:2)}</b><i class="${u?'pos':'neg'}">${u?'▲':'▼'} ${c==null?'':(u?'+':'−')+inr(Math.abs(c),m.gift?0:2)+' '}(${sgn(p,2)})</i>${m.note?`<div class="small" style="font-size:11.5px">${m.note}</div>`:''}</div>`}).join('');
+$('idx').innerHTML=idxHtml();$('idxAsOf').textContent=BRIEF.asOf+' · Indian index quotes are not shown in the TradingView strip because NSE restricts embedded data.';
+$('whyLbl').textContent=BRIEF.whyLbl;
+$('asiaLbl').textContent=BRIEF.asiaLbl;
+$('asia').innerHTML=BRIEF.asia.map(a=>`<div class="card as"><span>${a.c} · ${a.n}</span><b>${a.v}</b><i class="${a.p>=0?'pos':'neg'}">${a.p>=0?'▲':'▼'} ${sgn(a.p,2)}</i>${a.mon?`<em>${a.mon}</em>`:''}</div>`).join('');
+$('why').innerHTML=BRIEF.why.map(w=>`<div class="card"><b class="neg">${w.b}</b><p>${w.t}</p></div>`).join('');
+$('weekLbl').textContent=BRIEF.weekLbl;
+const mx=Math.max(...BRIEF.week.filter(w=>w.n).map(w=>Math.abs(w.v)));
+$('board').innerHTML=BRIEF.week.map(w=>w.g?`<div class="grp">${w.g}</div>`:`<div class="row"><span>${w.n}</span><div class="track"><div class="b ${w.v>=0?'up':'dn'}" style="width:${Math.abs(w.v)/mx*50}%"></div></div><span class="v ${w.v>=0?'pos':'neg'}">${sgn(w.v)}</span></div>`).join('');
+const fm=Math.max(...BRIEF.fii.map(f=>f.v));
+$('fii').innerHTML=BRIEF.fii.map(f=>`<div class="row"><span>${f.d}</span><div class="track"><div class="b up" style="width:${f.v/fm*100}%"></div></div><span class="v pos">+₹${inr(f.v,0)}</span></div>`).join('');
+$('tot').innerHTML=BRIEF.totals.map(([l,v,c])=>`<div>${l}<b class="${c}">${v}</b></div>`).join('');
+$('snews').innerHTML=BRIEF.news.map(n=>{let p='—',cl='';if(n.p==='loss'){p='Loss';cl='neg'}else if(n.p!=null){p=(n.p>=0?'+':'−')+Math.abs(n.p)+'%';cl=n.p>=0?'pos':'neg'}return `<tr><td data-l="Company"><b>${n.c}</b></td><td data-l="Reported">${n.t}</td><td class="r ${cl}" data-l="Profit">${p}</td></tr>`}).join('');
+$('cal').innerHTML=BRIEF.cal.map(c=>`<li><time>${c.d}</time><span>${c.t}</span></li>`).join('');
+$('levels').innerHTML=BRIEF.levels.map(l=>`<div class="card"><h3>${l.h}</h3><p>${l.t}</p></div>`).join('');
+const C=BRIEF.commodities;$('cmAsOf').textContent=C.asOf+'. Live international prices below.';
+const cmTile=x=>`<div class="card"><span>${x.n}</span><b>${x.v}</b>${x.p!=null?`<i class="${x.p>=0?'pos':'neg'}">${x.p>=0?'▲':'▼'} ${sgn(x.p,2)}</i>`:''}<em>${x.u}</em></div>`;
+$('mcx').innerHTML=C.mcx.map(cmTile).join('');$('intl').innerHTML=C.intl.map(cmTile).join('');
+
+/* ---- calls ---- */
+function sources(){const seen=new Map();CALLS.forEach(c=>{if(c.publisher&&httpUrl(c.sourceUrl)&&!seen.has(c.publisher))seen.set(c.publisher,c)});$('srcList').innerHTML=[...[...seen.values()].map(c=>[`${c.publisher}${c.publisherReg?' (SEBI RA '+c.publisherReg+')':''}`,c.sourceUrl]),...BRIEF.sources].map(([t,u])=>`<li><a href="${safe(u)}" target="_blank" rel="noopener noreferrer">${safe(t)}</a></li>`).join('')}
+function liveFor(c){const q=c.symbol&&LIVE[(c.symbol+'.'+(c.exchange==='BSE'?'BSE':'NSE')).toUpperCase()];if(q&&q.price!=null)return {p:q.price,pct:q.pct,live:true};if(c.cmp)return {p:+c.cmp,pct:null,live:false};return null}
+function card(c){
+  const up=Math.abs((c.target-c.entry)/c.entry*100),dn=Math.abs((c.stopLoss-c.entry)/c.entry*100);
+  const L=liveFor(c),buy=c.side!=='SELL';let liveHtml='';
+  if(L){const lo=Math.min(c.stopLoss,c.target),hi=Math.max(c.stopLoss,c.target),pos=Math.max(0,Math.min(100,(L.p-lo)/(hi-lo)*100)),ep=(c.entry-lo)/(hi-lo)*100;
+    const mv=(buy?(L.p-c.entry):(c.entry-L.p))/c.entry*100,hit=buy?L.p>=c.target:L.p<=c.target,stop=buy?L.p<=c.stopLoss:L.p>=c.stopLoss;
+    liveHtml=`<div><div class="lp"><span>${L.live?'Last price':'Last updated price'} <b>${money(L.p)}</b>${L.pct!=null?` <span class="${L.pct>=0?'pos':'neg'}">${sgn(L.pct,2)} today</span>`:''}</span>${hit?'<span class="tag hit">At or above target</span>':stop?'<span class="tag sl">At or below stop-loss</span>':`<span class="${mv>=0?'pos':'neg'}">${sgn(mv)} since call</span>`}</div><div class="rail" style="--e:${ep}%"><span class="dot" style="left:${pos}%"></span></div><div class="ends"><span>SL ${money(c.stopLoss,0)}</span><span>Target ${money(c.target,0)}</span></div></div>`}
+  return `<article class="call ${c.side==='SELL'?'SELL':''}"><div class="ct"><div><h3>${safe(c.stock)}</h3><div class="meta">${safe(c.exchange||'NSE')}${c.symbol?':'+safe(c.symbol):''} · ${safe(c.timeframe)} · ${fmtDate(c.date)}</div></div><span class="side ${c.side==='SELL'?'SELL':''}">${safe(c.side)}</span></div>
+  <div class="lv"><div><span>${c.buyRange?'Buy range':'Reco price'}</span><b>₹${c.buyRange?safe(c.buyRange):inr(c.entry)}</b></div><div class="t"><span>Target${c.target2?' 1':''}</span><b>${money(c.target,0)}</b></div><div class="s"><span>Stop-loss</span><b>${money(c.stopLoss,0)}</b></div></div>
+  ${c.target2||c.note?`<div class="small">${c.target2?'Target 2: <b>'+money(c.target2,0)+'</b>':''}${c.target2&&c.note?' · ':''}${safe(c.note||'')}</div>`:''}
+  <div class="rr"><span>Upside <b class="pos">${up.toFixed(1)}%</b></span><span>Risk <b class="neg">${dn.toFixed(1)}%</b></span><span>Reward : risk <b>${(up/dn).toFixed(1)} : 1</b></span></div>
+  ${liveHtml}
+  <div class="tf"><span>Time frame: <b>${safe(tfText(c))}</b></span><span>Valid till <b>${till(c)}</b></span></div>
+  <div class="src">${c.publisher?`By ${httpUrl(c.sourceUrl)?`<a href="${safe(c.sourceUrl)}" target="_blank" rel="noopener noreferrer">${safe(c.publisher)}</a>`:safe(c.publisher)}${c.publisherReg?' · SEBI RA '+safe(c.publisherReg):''}`:'Publisher not supplied'}</div></article>`}
+function render(){
+  const open=CALLS.filter(c=>c.status==='open');
+  const today=istToday();const latest=open.map(c=>c.date).sort().pop();
+  const todays=open.filter(c=>c.date===today),picks=todays.length?todays:open.filter(c=>c.date===latest);
+  const note=$('picksNote');if(!todays.length&&latest){note.hidden=false;note.textContent=`No new calls have been published yet for today. Showing the latest picks, published ${longDate(latest)}.`}else note.hidden=true;
+  $('todayCards').innerHTML=picks.length?picks.map(card).join(''):'<div class="empty">No picks published yet.</div>';
+  $('homePicks').innerHTML=picks.length?picks.slice(0,3).map(card).join(''):'<div class="empty">No picks published yet.</div>';
+  const firms=[...new Set(open.map(c=>c.publisher).filter(Boolean))];
+  $('firms').innerHTML=[['all',`All firms (${open.length})`],...firms.map(f=>[f,`${firmShort(f)} (${open.filter(c=>c.publisher===f).length})`])].map(([k,l])=>`<button class="chip" type="button" data-f="${safe(k)}" aria-pressed="${k===firm}">${safe(l)}</button>`).join('');
+  const key=$('sort').value,rr=c=>Math.abs((c.target-c.entry)/(c.stopLoss-c.entry)),upv=c=>Math.abs((c.target-c.entry)/c.entry),mv=c=>{const L=liveFor(c);return L?((c.side!=='SELL'?L.p-c.entry:c.entry-L.p)/c.entry):-1e9};
+  const list=open.filter(c=>firm==='all'||c.publisher===firm).sort((a,b)=>key==='rr'?rr(b)-rr(a):key==='up'?upv(b)-upv(a):key==='move'?mv(b)-mv(a):b.date.localeCompare(a.date));
+  $('cards').innerHTML=list.length?list.map(card).join(''):'<div class="empty">No open tips right now.</div>';
+  const t0=D(today);const since=new Date(t0);since.setDate(since.getDate()-30);
+  const recent=CALLS.filter(c=>D(c.date)>=since).sort((a,b)=>b.date.localeCompare(a.date));
+  const closed=recent.filter(c=>ret(c)!=null),avg=closed.length?closed.reduce((s,c)=>s+ret(c),0)/closed.length:null;
+  $('sum').innerHTML=[['Calls · 30 days',recent.length],['Target hit',recent.filter(c=>c.status==='target').length],['Stop-loss hit',recent.filter(c=>c.status==='sl').length],['Still open',recent.filter(c=>c.status==='open').length],['Avg return, closed',avg==null?'—':sgn(avg)]].map(([k,v])=>`<div class="card"><span>${k}</span><b>${v}</b></div>`).join('');
+  $('trk').innerHTML=recent.length?recent.map(c=>{const r=ret(c),L=liveFor(c);const nowR=c.status==='open'&&L?((c.side!=='SELL'?L.p-c.entry:c.entry-L.p)/c.entry*100):null;return `<tr><td data-l="Date">${fmtDate(c.date)}</td><td data-l="Stock"><b>${safe(c.stock)}</b><br><span class="small">${safe(firmShort(c.publisher))}</span></td><td data-l="Call">${safe(c.side)}</td><td data-l="Time frame">${safe(c.timeframe)}${till(c)==='Not stated'?'':' · till '+till(c)}</td><td class="r" data-l="Entry">${money(c.entry)}</td><td class="r" data-l="Now / exit">${c.status==='open'?(L?money(L.p):'—'):money(c.exit)}</td><td class="r ${r!=null?(r>=0?'pos':'neg'):nowR!=null?(nowR>=0?'pos':'neg'):''}" data-l="Return">${r!=null?sgn(r,2):nowR!=null?sgn(nowR,1)+' (open)':'—'}</td><td data-l="Outcome"><span class="st ${safe(c.status)}">${labels[c.status]||'Unknown'}</span></td></tr>`}).join(''):'<tr><td colspan="8">No calls in the last 30 days.</td></tr>';
+  sources();if(token)renderAdmin();
+}
+$('firms').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(b){firm=b.dataset.f;render()}});
+$('sort').addEventListener('change',render);
+
+/* ---- api ---- */
+async function api(url,opts={}){const h={'Content-Type':'application/json',...(opts.headers||{})};if(token)h.Authorization='Bearer '+token;const r=await fetch(url,{...opts,headers:h});let data={};try{data=await r.json()}catch{}if(r.status===401&&token&&!url.endsWith('/auth')){token='';sessionStorage.removeItem('bj_admin_token');setAuth(false)}if(!r.ok)throw Error(data.error||'Request failed ('+r.status+')');return data}
+async function load(){try{let admin=[];try{const d=await api('/api/calls');admin=Array.isArray(d.calls)?d.calls:[]}catch(e){console.error(e)}const byId=new Map();[...(DAILY.calls||[]),...admin].forEach(c=>byId.set(c.id,c));CALLS=[...byId.values()].map(c=>({...c,entry:+c.entry,target:+c.target,stopLoss:+c.stopLoss,target2:c.target2==null?null:+c.target2,exit:c.exit==null?null:+c.exit}));render();pull()}catch(e){['todayCards','cards','homePicks'].forEach(id=>$(id).innerHTML='<div class="empty">Unable to load picks. Please refresh shortly.</div>');console.error(e)}}
+
+/* ---- live prices (needs EODHD_API_TOKEN on Netlify) ---- */
+const ist=()=>new Date(Date.now()+(330+new Date().getTimezoneOffset())*60000);
+const mktOpen=()=>{const d=ist(),w=d.getDay(),m=d.getHours()*60+d.getMinutes();return w>0&&w<6&&m>=555&&m<=935};
+async function pull(){
+  const syms=[...new Set([...CALLS.filter(c=>c.status==='open'&&c.symbol).map(c=>(c.symbol+'.'+(c.exchange==='BSE'?'BSE':'NSE')).toUpperCase()),...BRIEF.indices.map(m=>m.sym).filter(Boolean)])];
+  if(!syms.length)return;
+  try{const r=await fetch('/api/quotes?s='+encodeURIComponent(syms.join(',')),{cache:'no-store'});if(!r.ok)return;const j=await r.json();
+    (j.quotes||[]).forEach(q=>{if(q&&q.code)LIVE[q.code.toUpperCase()]=q});
+    const tm=j.asOf?new Date(j.asOf*1000).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}):'';
+    $('live').classList.add('ok');$('liveTxt').textContent=`${mktOpen()?'Live':'Last'} prices${tm?' as of '+tm+' IST':''} · delayed about 15–20 min${mktOpen()?' · refreshing every minute':' · market closed'}`;
+    $('idx').innerHTML=idxHtml();render();
+  }catch(e){}
+}
+setInterval(()=>{if(mktOpen())pull()},60000);
+
+/* ---- news ---- */
+function newsDate(v){const d=new Date(v);return isNaN(d)?'':d.toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}
+const newsHtml=a=>a.length?a.map(x=>`<div class="ni"><a href="${httpUrl(x.url)?safe(x.url):'#'}" target="_blank" rel="noopener noreferrer">${safe(x.title||'Market update')}</a><div class="nm">${safe(x.source||'News')} · ${safe(newsDate(x.publishedAt))}</div></div>`).join(''):'<div class="muted">No headlines right now.</div>';
+async function getNews(r){const res=await fetch('/api/news?region='+r,{cache:'no-store'});const d=await res.json();if(!res.ok)throw Error(d.error);return d.articles||[]}
+async function loadNews(){const el=$('newsList');el.innerHTML='<div class="muted">Loading headlines…</div>';try{el.innerHTML=newsHtml(await getNews(newsRegion))}catch(e){el.innerHTML='<div class="muted">News could not be loaded. Please refresh shortly.</div>'}}
+async function loadCmNews(){try{$('cmNews').className='';$('cmNews').innerHTML=newsHtml((await getNews('commodities')).slice(0,8))}catch(e){$('cmNews').textContent='News could not be loaded.'}}
+$('ntabs').addEventListener('click',e=>{const b=e.target.closest('[data-n]');if(!b)return;newsRegion=b.dataset.n;document.querySelectorAll('#ntabs .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));loadNews()});
+$('refreshNews').addEventListener('click',loadNews);
+setInterval(()=>{if(location.hash==='#news')loadNews()},5*60*1000);
+
+/* ---- admin ---- */
+function setAuth(on){$('loginBox').hidden=on;$('editorBox').hidden=!on}
+function resetForm(){$('callForm').reset();$('callId').value='';$('fDate').value=istToday();$('adminMessage').textContent=''}
+function formCall(){const v=k=>$('f'+k).value,n=k=>v(k)?+v(k):null;return {id:$('callId').value||crypto.randomUUID(),date:v('Date'),stock:v('Stock').trim(),symbol:v('Symbol').trim().toUpperCase(),exchange:v('Exchange'),side:v('Side'),timeframe:v('Time'),entry:+v('Entry'),buyRange:v('Range').trim(),target:+v('Target'),target2:n('Target2'),stopLoss:+v('SL'),cmp:n('CMP'),status:v('Status'),exit:n('Exit'),publisher:v('Source').trim(),publisherReg:v('Reg').trim().toUpperCase(),sourceUrl:v('Url').trim(),note:v('Note').trim()}}
+$('loginBtn').addEventListener('click',async()=>{try{const d=await api('/api/auth',{method:'POST',body:JSON.stringify({password:$('adminPassword').value})});token=d.token;sessionStorage.setItem('bj_admin_token',token);$('adminPassword').value='';$('loginMsg').textContent='';setAuth(true);renderAdmin()}catch(e){$('loginMsg').textContent=e.message}});
+$('logoutBtn').addEventListener('click',()=>{token='';sessionStorage.removeItem('bj_admin_token');setAuth(false)});
+$('resetForm').addEventListener('click',resetForm);
+$('callForm').addEventListener('submit',async e=>{e.preventDefault();const c=formCall();if(!c.date||!c.stock||!(c.entry>0)||!(c.target>0)||!(c.stopLoss>0)){$('adminMessage').textContent='Please enter date, stock, entry, target and stop-loss.';return}if(c.sourceUrl&&!httpUrl(c.sourceUrl)){$('adminMessage').textContent='Source URL must start with https://';return}
+  try{await api('/api/calls',{method:'POST',body:JSON.stringify(c)});$('adminMessage').textContent='Call saved.';resetForm();await load()}catch(err){$('adminMessage').textContent=err.message}});
+function renderAdmin(){setAuth(true);$('adminRows').innerHTML=CALLS.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(c=>`<tr><td>${safe(c.stock)}</td><td>${fmtDate(c.date)}</td><td>${labels[c.status]||safe(c.status)}</td><td><button class="btn line" type="button" data-edit="${safe(c.id)}">Edit</button> <button class="btn danger" type="button" data-delete="${safe(c.id)}">Delete</button></td></tr>`).join('')||'<tr><td colspan="4">No records yet.</td></tr>'}
+$('adminRows').addEventListener('click',async e=>{const ed=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');
+  if(ed){const c=CALLS.find(x=>x.id===ed.dataset.edit);if(!c)return;const set=(k,v)=>$('f'+k).value=v??'';$('callId').value=c.id;set('Date',c.date);set('Stock',c.stock);set('Symbol',c.symbol);set('Exchange',c.exchange||'NSE');set('Side',c.side);set('Time',c.timeframe);if($('fTime').value!==c.timeframe){$('fTime').add(new Option(c.timeframe));set('Time',c.timeframe)}set('Entry',c.entry);set('Range',c.buyRange);set('Target',c.target);set('Target2',c.target2);set('SL',c.stopLoss);set('CMP',c.cmp);set('Status',c.status);set('Exit',c.exit);set('Source',c.publisher);set('Reg',c.publisherReg);set('Url',c.sourceUrl);set('Note',c.note);$('adminMessage').textContent='Editing '+c.stock;$('callForm').scrollIntoView({behavior:'smooth'})}
+  else if(del){if(!confirm('Permanently delete this call?'))return;try{await api('/api/calls?id='+encodeURIComponent(del.dataset.delete),{method:'DELETE'});await load()}catch(err){$('adminMessage').textContent=err.message}}});
+setAuth(!!token);resetForm();route();load();
+})();
+}
+</script>
+</body>
+</html>

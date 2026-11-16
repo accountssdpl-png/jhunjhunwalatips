@@ -1,0 +1,607 @@
+{
+ "updatedAt": "2026-11-16T07:30:00+05:30",
+ "brief": {
+  "date": "Monday, 16 November 2026",
+  "asOf": "Index levels: Friday 13 Nov close · GIFT Nifty: early Monday",
+  "indices": [
+   {
+    "name": "GIFT NIFTY",
+    "val": 25286,
+    "chg": 20,
+    "pct": 0.08,
+    "gift": true,
+    "note": "Early Mon · indicates flat-to-positive start"
+   },
+   {
+    "name": "NIFTY 50",
+    "sym": "NSEI.INDX",
+    "val": 25144.3,
+    "chg": -155.05,
+    "pct": -0.61
+   },
+   {
+    "name": "SENSEX",
+    "sym": "BSESN.INDX",
+    "val": 81592.45,
+    "chg": -318.56,
+    "pct": -0.39
+   },
+   {
+    "name": "NIFTY BANK",
+    "sym": "NSEBANK.INDX",
+    "val": 61034.1,
+    "chg": -484.4,
+    "pct": -0.79
+   },
+   {
+    "name": "INDIA VIX",
+    "val": 15.54,
+    "chg": null,
+    "pct": -6.5
+   }
+  ],
+  "whyLbl": "Friday’s fall ended a three-day rise",
+  "asiaLbl": "Friday 13 Nov close; Monday-morning moves where reported",
+  "asia": [
+   {
+    "n": "Nikkei 225",
+    "c": "🇯🇵 Japan",
+    "v": "61,142",
+    "p": 0.53,
+    "mon": "Mon: opened −0.62% at 60,751"
+   },
+   {
+    "n": "KOSPI",
+    "c": "🇰🇷 South Korea",
+    "v": "5,290.53",
+    "p": -0.98,
+    "mon": "Mon: −0.2% at 5,279.72 early"
+   },
+   {
+    "n": "Hang Seng",
+    "c": "🇭🇰 Hong Kong",
+    "v": "23,637.60",
+    "p": -1.55
+   },
+   {
+    "n": "Shanghai Composite",
+    "c": "🇨🇳 China",
+    "v": "3,634.35",
+    "p": -0.59
+   },
+   {
+    "n": "Taiwan Weighted",
+    "c": "🇹🇼 Taiwan",
+    "v": "43,675.12",
+    "p": 1.35
+   },
+   {
+    "n": "Jakarta Composite",
+    "c": "🇮🇩 Indonesia",
+    "v": "5,344.41",
+    "p": 1.78
+   }
+  ],
+  "why": [
+   {
+    "b": "6.09%",
+    "t": "October retail inflation, above the RBI’s 6% upper limit; food inflation 8.94%. Rate-hike talk is back."
+   },
+   {
+    "b": "~$96",
+    "t": "Brent crude on Middle East supply worries: a bigger import bill for India."
+   },
+   {
+    "b": "₹94.24",
+    "t": "Rupee per dollar, weaker on crude, higher US yields and a strong dollar.",
+    "g": false
+   }
+  ],
+  "weekLbl": "Change for the week ended 13 November",
+  "week": [
+   {
+    "g": "Benchmarks"
+   },
+   {
+    "n": "Nifty 50",
+    "v": 0.63
+   },
+   {
+    "n": "Sensex",
+    "v": 0.73
+   },
+   {
+    "n": "Nifty Bank",
+    "v": 3.3
+   },
+   {
+    "g": "Broader market"
+   },
+   {
+    "n": "Midcap 150",
+    "v": 1.8
+   },
+   {
+    "n": "Smallcap 250",
+    "v": 3.2
+   },
+   {
+    "g": "Sectors"
+   },
+   {
+    "n": "PSU Bank",
+    "v": 7.5
+   },
+   {
+    "n": "Realty",
+    "v": 2.7
+   },
+   {
+    "n": "Pharma",
+    "v": 2
+   },
+   {
+    "n": "Cement",
+    "v": -2.1
+   },
+   {
+    "n": "IT",
+    "v": -3.2
+   }
+  ],
+  "fii": [
+   {
+    "d": "9 Nov",
+    "v": 7212
+   },
+   {
+    "d": "11 Nov",
+    "v": 12563
+   },
+   {
+    "d": "12 Nov",
+    "v": 7830
+   },
+   {
+    "d": "13 Nov",
+    "v": 5736
+   }
+  ],
+  "totals": [
+   [
+    "FII net, 9–13 Nov",
+    "+₹33,341 cr",
+    "pos"
+   ],
+   [
+    "DII net, same days",
+    "−₹24,190 cr",
+    "neg"
+   ],
+   [
+    "FII net, November",
+    "≈ +₹79,300 cr",
+    "pos"
+   ]
+  ],
+  "news": [
+   {
+    "c": "Oil India",
+    "t": "Q2 standalone profit ₹2,259 cr; ₹7 dividend",
+    "p": 116
+   },
+   {
+    "c": "Eicher Motors",
+    "t": "Q2 profit ₹1,573 cr on record Royal Enfield sales",
+    "p": 15
+   },
+   {
+    "c": "Ashok Leyland",
+    "t": "Q2 profit ₹869 cr, volumes +32%; auditors flagged Hinduja Leyland Finance accounts",
+    "p": 13
+   },
+   {
+    "c": "ABB India",
+    "t": "Record orders ₹4,733 cr, revenue +19%; margins slipped",
+    "p": null
+   },
+   {
+    "c": "Patanjali Foods",
+    "t": "Q2 profit ₹420 cr despite record edible oil sales",
+    "p": -19
+   },
+   {
+    "c": "Natco Pharma",
+    "t": "Q2 profit ₹203 cr as lenalidomide income faded",
+    "p": -61
+   },
+   {
+    "c": "Grasim",
+    "t": "Consolidated loss ₹234 cr on Canada pulp write-down",
+    "p": "loss"
+   }
+  ],
+  "cal": [
+   {
+    "d": "Mon 16 Nov",
+    "t": "India WPI inflation for October; first reaction to weekend results."
+   },
+   {
+    "d": "Tue 17 Nov",
+    "t": "Nifty weekly expiry. Nvidia results and US retail sales after Indian hours."
+   },
+   {
+    "d": "Wed 18 Nov",
+    "t": "US Fed minutes; Indian IT reacts to Nvidia."
+   },
+   {
+    "d": "Thu 19 Nov",
+    "t": "Mahanadi Coalfields IPO opens (₹9,500 cr OFS by Coal India; listing 27 Nov)."
+   },
+   {
+    "d": "Fri 20 Nov",
+    "t": "RBI weekly forex reserves."
+   },
+   {
+    "d": "2–4 Dec",
+    "t": "RBI policy review, in focus after CPI crossed 6%."
+   }
+  ],
+  "levels": [
+   {
+    "h": "Nifty 50 · 25,144",
+    "t": "Analysts cite 25,100 as the first level to hold, then 25,000 and 24,800; resistance near 25,200, 25,425 and 25,500."
+   },
+   {
+    "h": "Sensex · 81,592",
+    "t": "81,500 seen as support; resistance near 81,880 and 82,000."
+   },
+   {
+    "h": "Bank Nifty · 61,034",
+    "t": "Support near 61,000 and 60,500; resistance near 61,300, then 61,550–62,000."
+   }
+  ],
+  "commodities": {
+   "asOf": "MCX: Friday 13 Nov evening (delayed) · International: week ended 13–14 Nov",
+   "mcx": [
+    {
+     "n": "Gold",
+     "u": "₹ / 10 g",
+     "v": "₹1,36,699",
+     "p": 0.35
+    },
+    {
+     "n": "Silver",
+     "u": "₹ / kg",
+     "v": "₹1,78,396",
+     "p": -0.18
+    },
+    {
+     "n": "Crude oil",
+     "u": "₹ / barrel",
+     "v": "₹8,352",
+     "p": 0.63
+    },
+    {
+     "n": "Copper",
+     "u": "₹ / kg",
+     "v": "₹1,316.90",
+     "p": -0.85
+    },
+    {
+     "n": "Natural gas",
+     "u": "₹ / mmBtu",
+     "v": "₹310.30",
+     "p": -0.89
+    }
+   ],
+   "intl": [
+    {
+     "n": "COMEX gold",
+     "u": "$ / oz · week close",
+     "v": "$3,886",
+     "p": null
+    },
+    {
+     "n": "COMEX silver",
+     "u": "$ / oz · week close",
+     "v": "$49.12",
+     "p": null
+    },
+    {
+     "n": "Brent crude",
+     "u": "$ / barrel",
+     "v": "~$96",
+     "p": null
+    },
+    {
+     "n": "WTI crude",
+     "u": "$ / barrel",
+     "v": "~$88.7",
+     "p": null
+    },
+    {
+     "n": "USD / INR",
+     "u": "₹ per $",
+     "v": "₹94.2",
+     "p": null
+    }
+   ]
+  },
+  "sources": [
+   [
+    "TradingView: Asian indices",
+    "https://www.tradingview.com/markets/indices/quotes-asia/"
+   ],
+   [
+    "TradingKey: Nikkei, Kospi on 16 Nov 2026",
+    "https://tradingkey.com/analysis/stocks/more/262306068-japan-korea-stocks-skhy-kospi-nikkei-samsung-skhynix-softbank-kioxia-ppi-tradingkey"
+   ],
+   [
+    "Business Standard: market close, 13 Nov 2026",
+    "https://www.business-standard.com/amp/markets/news/stock-market-live-bse-sensex-today-nifty50-gift-nifty-crude-oil-prices-bn-agrochem-share-split-november-13-126111300069_1.html"
+   ],
+   [
+    "5paisa: post-market update, 13 Nov 2026",
+    "https://www.5paisa.com/blog/post-market-update-nifty-sensex-fall-inflation-crude-oil-november-13-2026"
+   ],
+   [
+    "Business Today: markets next week",
+    "https://www.businesstoday.in/markets/stocks/story/markets-next-week-key-triggers-that-could-move-dalal-street-return-of-fiis-nvidia-earnings-inflation-and-us-trade-deal-567496-2026-11-15"
+   ],
+   [
+    "The Financial Economy: Nifty outlook next week",
+    "https://www.thefinancialeconomy.com/nifty-outlook-next-week/"
+   ],
+   [
+    "Univest: market prediction for 16 Nov",
+    "https://univest.in/blogs/stock-market-prediction-for-tomorrow-2"
+   ],
+   [
+    "Kotak Neo: GIFT Nifty",
+    "https://www.kotakneo.com/indices/global-indices/gift-nifty/"
+   ],
+   [
+    "BhaavBrief: MCX prices",
+    "https://bhaavbrief.in/markets"
+   ],
+   [
+    "Goodreturns: gold & silver, 14 Nov 2026",
+    "https://www.goodreturns.in/news/gold-rates-silver-rates-today-14-11-2026-live-india-gold-prices-silver-price-mcx-24k-22k-18k-gold-1546939.html"
+   ]
+  ]
+ },
+ "calls": [
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "note": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "id": "s1",
+   "date": "2026-11-13",
+   "stock": "Waaree Energies",
+   "symbol": "WAAREEENER",
+   "timeframe": "Positional",
+   "entry": 2600,
+   "target": 2800,
+   "stopLoss": 2500
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "note": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "id": "s2",
+   "date": "2026-11-13",
+   "stock": "Blue Star",
+   "symbol": "BLUESTARCO",
+   "timeframe": "Positional",
+   "entry": 1590,
+   "target": 1680,
+   "stopLoss": 1555
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "note": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "id": "s3",
+   "date": "2026-11-12",
+   "stock": "Redington",
+   "symbol": "REDINGTON",
+   "timeframe": "Positional",
+   "entry": 358,
+   "target": 380,
+   "stopLoss": 345
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "note": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "id": "s4",
+   "date": "2026-11-12",
+   "stock": "Aditya Birla Real Estate",
+   "symbol": "ABREL",
+   "timeframe": "Positional",
+   "entry": 1120,
+   "target": 1200,
+   "stopLoss": 1080
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "417–427",
+   "note": "",
+   "publisher": "ICICI Securities Ltd",
+   "publisherReg": "INH000000990",
+   "sourceUrl": "https://www.icicidirect.com/mailimages/momentum_picks.pdf",
+   "id": "s5",
+   "date": "2026-11-05",
+   "stock": "Tata Motors CV",
+   "symbol": "TMCV",
+   "timeframe": "30 days",
+   "entry": 422,
+   "target": 458,
+   "stopLoss": 408
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 366,
+   "buyRange": "304–315",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s6",
+   "date": "2026-11-05",
+   "stock": "BPCL",
+   "symbol": "BPCL",
+   "entry": 304.7,
+   "target": 342,
+   "stopLoss": 274
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 1686,
+   "buyRange": "1,405–1,440",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s7",
+   "date": "2026-11-05",
+   "stock": "HCL Technologies",
+   "symbol": "HCLTECH",
+   "entry": 1405,
+   "target": 1580,
+   "stopLoss": 1250
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 720,
+   "buyRange": "578–600",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s8",
+   "date": "2026-11-05",
+   "stock": "IIFL Finance",
+   "symbol": "IIFL",
+   "entry": 578.2,
+   "target": 670,
+   "stopLoss": 510
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 1600,
+   "buyRange": "1,340–1,383",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s9",
+   "date": "2026-11-05",
+   "stock": "JSW Steel",
+   "symbol": "JSWSTEEL",
+   "entry": 1343,
+   "target": 1505,
+   "stopLoss": 1195
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 330,
+   "buyRange": "256–265",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s10",
+   "date": "2026-11-05",
+   "stock": "Satin Creditcare Network",
+   "symbol": "SATIN",
+   "entry": 256.69,
+   "target": 300,
+   "stopLoss": 220
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": 666,
+   "buyRange": "533–548",
+   "note": "Stop-loss on closing basis",
+   "publisher": "HDFC Securities Ltd",
+   "publisherReg": "INH000002475",
+   "sourceUrl": "https://hdfcsky.com/sky-learn/diwali-trading/diwali-technical-stock-picks-2026",
+   "timeframe": "Long term (till next Diwali)",
+   "id": "s11",
+   "date": "2026-11-05",
+   "stock": "Zensar Technologies",
+   "symbol": "ZENSARTECH",
+   "entry": 533,
+   "target": 615,
+   "stopLoss": 469
+  }
+ ]
+}
