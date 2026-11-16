@@ -137,6 +137,16 @@ td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .cm em{display:block;font-style:normal;font-size:11.5px;color:var(--mut)}
 @media(max-width:900px){.cm{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .tv{min-height:420px;overflow:hidden}
+/* videos */
+.vmain{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:22px;align-items:start}
+.vmain video{width:100%;aspect-ratio:9/16;border-radius:18px;background:#000;box-shadow:var(--sh)}
+.vmeta h2{margin:6px 0 8px}.vmeta .tag{background:var(--dnbg);color:var(--red)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:14px}
+.vcard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;padding:0;box-shadow:var(--sh)}
+.vcard img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.vcard div{padding:8px 10px;font-size:13px;font-weight:600}
+.vcard[aria-current=true]{outline:3px solid var(--red)}
+@media(max-width:700px){.vmain{grid-template-columns:minmax(0,1fr)}.vmain video{max-width:380px;margin:auto}}
 /* news */
 .ntabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .ni{padding:12px 0;border-bottom:1px solid var(--line)}.ni:last-child{border:0}
@@ -168,7 +178,7 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
 </div></header>
 
 <nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs">
-  <a href="#home">Home</a><a href="#picks">Today’s picks</a><a href="#tips">All tips</a><a href="#commodities">Commodities</a><a href="#news">News</a><a href="#record">Track record</a>
+  <a href="#home">Home</a><a href="#picks">Today’s picks</a><a href="#tips">All tips</a><a href="#commodities">Commodities</a><a href="#videos">Videos</a><a href="#news">News</a><a href="#record">Track record</a>
 </div></nav>
 
 <main class="wrap">
@@ -239,6 +249,14 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
     <div class="card pad tv"><h3 style="margin-bottom:8px">Live international prices</h3><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>{"colorTheme":"light","dateRange":"1D","showChart":true,"locale":"en","width":"100%","height":"400","isTransparent":true,"showSymbolLogo":true,"showFloatingTooltip":true,"plotLineColorGrowing":"#0f9d58","plotLineColorFalling":"#d7262e","belowLineFillColorGrowing":"rgba(15,157,88,0.12)","belowLineFillColorFalling":"rgba(215,38,46,0.12)","belowLineFillColorGrowingBottom":"rgba(15,157,88,0)","belowLineFillColorFallingBottom":"rgba(215,38,46,0)","symbolActiveColor":"rgba(240,169,28,0.15)","tabs":[{"title":"Metals","symbols":[{"s":"OANDA:XAUUSD","d":"Gold ($/oz)"},{"s":"OANDA:XAGUSD","d":"Silver ($/oz)"},{"s":"OANDA:XCUUSD","d":"Copper"},{"s":"OANDA:XPTUSD","d":"Platinum"}]},{"title":"Energy","symbols":[{"s":"OANDA:BCOUSD","d":"Brent crude"},{"s":"OANDA:WTICOUSD","d":"WTI crude"},{"s":"OANDA:NATGASUSD","d":"Natural gas"}]},{"title":"Currency","symbols":[{"s":"FX_IDC:USDINR","d":"USD/INR"},{"s":"FX:EURUSD","d":"EUR/USD"}]}]}</script></div></div>
     <div class="card pad"><h3>Commodity news</h3><div id="cmNews" class="muted">Loading headlines…</div></div>
   </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="page" id="p-videos">
+  <div class="ph"><div><h1>Market videos</h1><p class="sub">Hindi market updates every trading day at 8 AM (before the bell) and 6 PM (after the close).</p></div></div>
+  <div class="vmain" id="vMain"><div class="empty">Loading videos…</div></div>
+  <h2 style="font-size:20px;margin:24px 0 10px">Earlier videos</h2>
+  <div class="vgrid" id="vList"></div>
 </section>
 
 <!-- NEWS -->
@@ -329,8 +347,8 @@ const istToday=()=>{const d=new Date(Date.now()+(330+new Date().getTimezoneOffse
 let CALLS=[],LIVE={},firm='all',newsRegion='india',token=sessionStorage.getItem('bj_admin_token')||'';
 
 /* ---- router ---- */
-const PAGES=['home','picks','tips','commodities','news','record','admin'];
-function route(){let p=(location.hash||'#home').slice(1);if(!PAGES.includes(p))p='home';PAGES.forEach(x=>$('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));if(p==='news')loadNews();if(p==='commodities')loadCmNews();window.scrollTo({top:0})}
+const PAGES=['home','picks','tips','commodities','videos','news','record','admin'];
+function route(){let p=(location.hash||'#home').slice(1);if(!PAGES.includes(p))p='home';PAGES.forEach(x=>$('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));if(p==='news')loadNews();if(p==='videos')loadVideos();if(p==='commodities')loadCmNews();window.scrollTo({top:0})}
 addEventListener('hashchange',route);
 $('adminOpen').addEventListener('click',()=>{location.hash=location.hash==='#admin'?'#home':'#admin'});
 
@@ -411,6 +429,18 @@ async function pull(){
   }catch(e){}
 }
 setInterval(()=>{if(mktOpen())pull()},60000);
+
+/* ---- videos ---- */
+let VIDS=null,vSel=0;
+const slotName=s=>s==='evening'?'Evening · 6 PM':'Morning · 8 AM';
+function showVideo(i){vSel=i;const v=VIDS[i];if(!v)return;
+  $('vMain').innerHTML=`<video controls playsinline preload="metadata" poster="${safe(v.poster)}" src="${safe(v.file)}"></video><div class="vmeta"><span class="tag">${slotName(v.slot)} · ${longDate(v.date)}</span><h2>${safe(v.title)}</h2><p class="sub">${safe(v.summary||'')}</p><p class="small">${Math.round((v.seconds||0)/60)} min · Hindi · For information only, not investment advice.</p></div>`;
+  document.querySelectorAll('.vcard').forEach((c,j)=>c.setAttribute('aria-current',j===i))}
+async function loadVideos(){if(!VIDS){try{const r=await fetch('/data/videos.json',{cache:'no-store'});VIDS=((await r.json()).videos||[]).sort((a,b)=>(b.date+b.slot).localeCompare(a.date+a.slot))}catch(e){VIDS=[]}}
+  if(!VIDS.length){$('vMain').innerHTML='<div class="empty">No videos yet.</div>';$('vList').innerHTML='';return}
+  $('vList').innerHTML=VIDS.map((v,i)=>`<button class="vcard" type="button" data-v="${i}"><img src="${safe(v.poster)}" alt="" loading="lazy"><div>${fmtDate(v.date)} · ${v.slot==='evening'?'6 PM':'8 AM'}</div></button>`).join('');
+  showVideo(vSel)}
+$('vList').addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(b){showVideo(+b.dataset.v);$('vMain').scrollIntoView({behavior:'smooth'})}});
 
 /* ---- news ---- */
 function newsDate(v){const d=new Date(v);return isNaN(d)?'':d.toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}
