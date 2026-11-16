@@ -1,153 +1,152 @@
 {
- "updatedAt": "2026-11-16T07:55:00+05:30",
+ "updatedAt": "2026-11-16T17:55:00+05:30",
  "brief": {
   "date": "Monday, 16 November 2026",
-  "asOf": "Index levels: Friday 13 Nov close · GIFT Nifty: 07:11 IST Monday",
+  "asOf": "Closing levels: Monday 16 Nov 2026 (NSE/BSE close, 3:30 PM IST)",
   "indices": [
-   {
-    "name": "GIFT NIFTY",
-    "val": 25206.5,
-    "chg": -59.5,
-    "pct": -0.24,
-    "gift": true,
-    "note": "07:11 IST Mon · 35.5 pts above Nifty Nov futures: flat-to-mildly positive start indicated"
-   },
    {
     "name": "NIFTY 50",
     "sym": "NSEI.INDX",
-    "val": 25144.3,
-    "chg": -155.05,
-    "pct": -0.61
+    "val": 25291.1,
+    "chg": 146.8,
+    "pct": 0.58,
+    "note": "Day range 25,172.10 – 25,337.60"
    },
    {
     "name": "SENSEX",
     "sym": "BSESN.INDX",
-    "val": 81592.45,
-    "chg": -318.56,
-    "pct": -0.39
+    "val": 82104.79,
+    "chg": 512.34,
+    "pct": 0.63,
+    "note": "Day range 81,762.82 – 82,311.65"
    },
    {
-    "name": "NIFTY BANK",
-    "sym": "NSEBANK.INDX",
-    "val": 61034.1,
-    "chg": -484.4,
-    "pct": -0.79
+    "name": "NIFTY MIDCAP 100",
+    "val": 61576.4,
+    "chg": -313.1,
+    "pct": -0.51
+   },
+   {
+    "name": "NIFTY SMALLCAP 100",
+    "val": 19441.1,
+    "chg": -215.35,
+    "pct": -1.1
    },
    {
     "name": "INDIA VIX",
-    "val": 15.49,
+    "val": 15.7,
     "chg": null,
-    "pct": -11.76
+    "pct": 1.33
    }
   ],
-  "whyLbl": "Friday’s fall ended a three-day rise",
-  "asiaLbl": "Friday 13 Nov close; Monday moves as of ~07:11 IST",
+  "whyLbl": "Why the market rose on Monday while broader markets fell",
+  "asiaLbl": "Asian markets, Monday 16 Nov close (% change)",
   "asia": [
    {
     "n": "Nikkei 225",
     "c": "🇯🇵 Japan",
-    "v": "61,142",
-    "p": 0.53,
-    "mon": "Mon 07:11 IST: −1.47%"
-   },
-   {
-    "n": "KOSPI",
-    "c": "🇰🇷 South Korea",
-    "v": "5,290.53",
-    "p": -0.98,
-    "mon": "Mon 07:11 IST: −2.45%"
-   },
-   {
-    "n": "Hang Seng",
-    "c": "🇭🇰 Hong Kong",
-    "v": "23,637.60",
-    "p": -1.55,
-    "mon": "Mon 07:11 IST: +0.30%"
-   },
-   {
-    "n": "Shanghai Composite",
-    "c": "🇨🇳 China",
-    "v": "3,634.35",
-    "p": -0.59
+    "v": "Mon close",
+    "p": -2.47
    },
    {
     "n": "Taiwan Weighted",
     "c": "🇹🇼 Taiwan",
-    "v": "43,675.12",
-    "p": 1.35
+    "v": "Mon close",
+    "p": -6.4
    },
    {
-    "n": "Jakarta Composite",
-    "c": "🇮🇩 Indonesia",
-    "v": "5,344.41",
-    "p": 1.78
+    "n": "Shanghai Composite",
+    "c": "🇨🇳 China",
+    "v": "Mon close",
+    "p": -0.88
+   },
+   {
+    "n": "Hang Seng",
+    "c": "🇭🇰 Hong Kong",
+    "v": "Mon close",
+    "p": 0.33
    }
   ],
   "why": [
    {
-    "b": "6.09%",
-    "t": "October retail inflation, above the RBI’s 6% upper limit; food inflation 8.94%. Rate-hike talk is back."
+    "b": "+1.87%",
+    "t": "Nifty FMCG was the best sector: ITC +3.54%, Tata Consumer +3.57%, Nestle India +2.68%. Private banks +0.88%, HDFC Bank +1.6%."
    },
    {
-    "b": "~$96",
-    "t": "Brent crude near $96 (about $95.65 early Monday) on Middle East supply worries: a bigger import bill for India."
+    "b": "$8.9 bn",
+    "t": "Foreign investors’ net buying of Indian shares in November so far (NSDL data cited by HDFC Sky), the highest monthly buying on record, as money rotates away from AI-heavy global markets."
    },
    {
-    "b": "₹94.24",
-    "t": "Rupee per dollar, weaker on crude, higher US yields and a strong dollar.",
-    "g": false
+    "b": "−8.7%",
+    "t": "Tata Motors PV, the biggest Nifty loser, after a ₹5,531 cr Q2 consolidated loss and a cut in JLR’s FY27 EBIT margin guidance to 2–3% from 4%."
+   },
+   {
+    "b": "2,515 vs 1,175",
+    "t": "NSE decliners vs advancers: mid and small caps saw profit booking (Midcap 100 −0.51%, Smallcap 100 −1.10%)."
    }
   ],
-  "weekLbl": "Change for the week ended 13 November",
+  "weekLbl": "Index and sector moves today, Monday 16 November",
   "week": [
    {
     "g": "Benchmarks"
    },
    {
     "n": "Nifty 50",
-    "v": 0.63
+    "v": 0.58
    },
    {
     "n": "Sensex",
-    "v": 0.73
-   },
-   {
-    "n": "Nifty Bank",
-    "v": 3.3
+    "v": 0.63
    },
    {
     "g": "Broader market"
    },
    {
-    "n": "Midcap 150",
-    "v": 1.8
+    "n": "Midcap 100",
+    "v": -0.51
    },
    {
-    "n": "Smallcap 250",
-    "v": 3.2
+    "n": "Smallcap 100",
+    "v": -1.1
    },
    {
     "g": "Sectors"
    },
    {
+    "n": "FMCG",
+    "v": 1.87
+   },
+   {
+    "n": "Private Bank",
+    "v": 0.88
+   },
+   {
     "n": "PSU Bank",
-    "v": 7.5
+    "v": 0.5
+   },
+   {
+    "n": "Oil & Gas",
+    "v": 0.42
+   },
+   {
+    "n": "Consumer Durables",
+    "v": 0.38
+   },
+   {
+    "n": "Auto",
+    "v": -1.29
    },
    {
     "n": "Realty",
-    "v": 2.7
+    "v": -1.34
+   },
+   {
+    "n": "Metal",
+    "v": -1.5
    },
    {
     "n": "Pharma",
-    "v": 2
-   },
-   {
-    "n": "Cement",
-    "v": -2.1
-   },
-   {
-    "n": "IT",
-    "v": -3.2
+    "v": -1.53
    }
   ],
   "fii": [
@@ -170,81 +169,86 @@
   ],
   "totals": [
    [
-    "FII net, 9–13 Nov",
-    "+₹33,341 cr",
+    "FII net, 13 Nov (latest provisional)",
+    "+₹5,736.55 cr",
     "pos"
    ],
    [
-    "DII net, same days",
-    "−₹24,190 cr",
+    "DII net, 13 Nov",
+    "−₹2,253.58 cr",
     "neg"
    ],
    [
-    "FII net, November",
-    "≈ +₹79,300 cr",
+    "FII net, November (2–13 Nov)",
+    "+₹84,290 cr",
     "pos"
+   ],
+   [
+    "16 Nov provisional",
+    "Not yet published at update time",
+    ""
    ]
   ],
   "news": [
    {
-    "c": "Paytm",
-    "t": "Preliminary RBI approval for its payments unit to issue prepaid payment products",
+    "c": "Max Healthcare",
+    "t": "Top Nifty gainer today, +6.63% to ₹1,009.90",
     "p": null
    },
    {
-    "c": "Cochin Shipyard",
-    "t": "Ex-dividend today for ₹3 interim dividend",
-    "p": null
-   },
-   {
-    "c": "T T Ltd",
-    "t": "Board considers a share buyback proposal",
-    "p": null
-   },
-   {
-    "c": "Oil India",
-    "t": "Q2 standalone profit ₹2,259 cr; ₹7 dividend",
-    "p": 116
-   },
-   {
-    "c": "Eicher Motors",
-    "t": "Q2 profit ₹1,573 cr on record Royal Enfield sales",
-    "p": 15
-   },
-   {
-    "c": "Ashok Leyland",
-    "t": "Q2 profit ₹869 cr, volumes +32%; auditors flagged Hinduja Leyland Finance accounts",
-    "p": 13
-   },
-   {
-    "c": "ABB India",
-    "t": "Record orders ₹4,733 cr, revenue +19%; margins slipped",
-    "p": null
-   },
-   {
-    "c": "Patanjali Foods",
-    "t": "Q2 profit ₹420 cr despite record edible oil sales",
-    "p": -19
-   },
-   {
-    "c": "Natco Pharma",
-    "t": "Q2 profit ₹203 cr as lenalidomide income faded",
-    "p": -61
-   },
-   {
-    "c": "Grasim",
-    "t": "Consolidated loss ₹234 cr on Canada pulp write-down",
+    "c": "Tata Motors PV",
+    "t": "Q2 consolidated net loss ₹5,531 cr; JLR FY27 EBIT margin guidance cut to 2–3%; shares −8.7%",
     "p": "loss"
+   },
+   {
+    "c": "Deepak Fertilisers",
+    "t": "Sept-quarter earnings up 85% y/y; shares +7.9%",
+    "p": 85
+   },
+   {
+    "c": "GE Power India",
+    "t": "Q2 profit down 14.5%; shares −10.7%",
+    "p": -14.5
+   },
+   {
+    "c": "Inox Wind",
+    "t": "Q2 profit down 35.9%; shares fell as much as 10.45%",
+    "p": -35.9
+   },
+   {
+    "c": "Axiscades",
+    "t": "Q2 FY27 EBITDA down 64.9%; shares −9.9%",
+    "p": null
+   },
+   {
+    "c": "Pace Digitek",
+    "t": "₹2,691 cr battery-storage order from NTPC Green; shares up over 11%",
+    "p": null
+   },
+   {
+    "c": "Hindalco",
+    "t": "Novelis to sell two Chinese subsidiaries for $265 million; shares −2.15%",
+    "p": null
+   },
+   {
+    "c": "Hindustan Zinc",
+    "t": "Board cleared ₹80,000 cr capex; shares lower",
+    "p": null
+   },
+   {
+    "c": "Va Tech Wabag",
+    "t": "Customer cancelled a $272 million Saudi desalination order",
+    "p": null
    }
   ],
   "cal": [
    {
-    "d": "Mon 16 Nov",
-    "t": "India WPI inflation for October; first reaction to weekend results."
-   },
-   {
     "d": "Tue 17 Nov",
     "t": "Nifty weekly expiry. Nvidia results and US retail sales after Indian hours."
+   },
+   {
+    "d": "This week",
+    "t": "Three IPOs worth over ₹10,000 cr open this week."
    },
    {
     "d": "Wed 18 Nov",
@@ -265,125 +269,85 @@
   ],
   "levels": [
    {
-    "h": "Nifty 50 · 25,144",
-    "t": "Analysts cite 25,100 as the first level to hold, then 25,000 and 24,800; resistance near 25,200, 25,425 and 25,500."
+    "h": "Nifty 50 · 25,291",
+    "t": "Vatsal Bhuva (LKP Securities): positional support at 24,800; expects consolidation in a 25,000–25,500 range before the next leg up. Today’s range: 25,172–25,338."
    },
    {
-    "h": "Sensex · 81,592",
-    "t": "81,500 seen as support; resistance near 81,880 and 82,000."
-   },
-   {
-    "h": "Bank Nifty · 61,034",
-    "t": "Support near 61,000 and 60,500; resistance near 61,300, then 61,550–62,000."
+    "h": "Sensex · 82,105",
+    "t": "Today’s range: 81,763–82,312. No analyst levels for Tuesday in the sources read this evening."
    }
   ],
   "commodities": {
-   "asOf": "MCX: last traded Friday 13 Nov (delayed, read Sun 15 Nov) · International: latest available Monday morning",
+   "asOf": "Monday 16 Nov, about 3:30–3:40 PM IST",
    "mcx": [
     {
-     "n": "Gold",
+     "n": "Gold (Dec)",
      "u": "₹ / 10 g",
-     "v": "₹1,36,750",
-     "p": 0.39
+     "v": "₹1,34,776",
+     "p": -1.41
     },
     {
-     "n": "Silver",
+     "n": "Silver (Dec)",
      "u": "₹ / kg",
-     "v": "₹1,76,543",
-     "p": -1.22
-    },
-    {
-     "n": "Crude oil",
-     "u": "₹ / barrel",
-     "v": "₹8,372",
-     "p": 0.87
-    },
-    {
-     "n": "Copper",
-     "u": "₹ / kg",
-     "v": "₹1,308.55",
-     "p": -1.48
-    },
-    {
-     "n": "Natural gas",
-     "u": "₹ / mmBtu",
-     "v": "₹307.90",
-     "p": -1.66
+     "v": "₹1,69,676",
+     "p": -3.76
     }
    ],
    "intl": [
     {
-     "n": "COMEX gold",
-     "u": "$ / oz",
-     "v": "$3,886",
-     "p": 0.03
-    },
-    {
-     "n": "COMEX silver",
-     "u": "$ / oz",
-     "v": "$49.12",
-     "p": -1.7
-    },
-    {
      "n": "Brent crude",
      "u": "$ / barrel",
-     "v": "$95.65",
-     "p": -0.2
+     "v": "$95.40",
+     "p": -0.4
     },
     {
-     "n": "WTI crude",
+     "n": "WTI crude (Jan)",
      "u": "$ / barrel",
-     "v": "$88.56",
-     "p": -0.2
-    },
-    {
-     "n": "USD / INR",
-     "u": "₹ per $ · 07:11 IST",
-     "v": "₹94.23",
+     "v": "$87.38",
      "p": null
     }
    ]
   },
   "sources": [
    [
-    "TradingView: Asian indices",
-    "https://www.tradingview.com/markets/indices/quotes-asia/"
+    "Upstox: market wrap, 16 Nov 2026",
+    "https://upstox.com/news/market-news/stocks/market-wrap-nov-16-sensex-rises-512-pts-nifty-50-ends-at-25-291-led-by-fmcg-stocks-max-healthcare-top-gainer/article-203523/"
    ],
    [
-    "Business Standard: market close, 13 Nov 2026",
-    "https://www.business-standard.com/amp/markets/news/stock-market-live-bse-sensex-today-nifty50-gift-nifty-crude-oil-prices-bn-agrochem-share-split-november-13-126111300069_1.html"
+    "Upstox: top gainers and losers, 16 Nov 2026",
+    "https://upstox.com/news/market-news/stocks/top-gainers-and-losers-nov-16-max-health-soars-7-tata-consumer-surges-4-tmpv-tumbles-9-check-list/article-203528/"
    ],
    [
-    "5paisa: post-market update, 13 Nov 2026",
-    "https://www.5paisa.com/blog/post-market-update-nifty-sensex-fall-inflation-crude-oil-november-13-2026"
+    "Business Standard: market close, 16 Nov 2026",
+    "https://www.business-standard.com/markets/news/stock-market-live-nse-bse-sensex-today-nifty50-gift-nifty-crude-oil-prices-november-16-126111600051_1.html"
+   ],
+   [
+    "HDFC Sky: market close report, 16 Nov 2026",
+    "https://hdfcsky.com/news/market-close-report-today-november-16-2026-nifty-sensex-shine-as-global-ai-jitters-redirect-trade-towards-india"
+   ],
+   [
+    "HDFC Sky: sectoral snapshot, 16 Nov 2026",
+    "https://hdfcsky.com/news/sectoral-snapshot-today-november-16-2026-fmcg-banking-stocks-lead-gains"
+   ],
+   [
+    "Kotak Neo: market wrap, 16 Nov 2026",
+    "https://www.kotakneo.com/news/market-news/sensex-and-nifty-finish-in-the-positive/"
+   ],
+   [
+    "Kotak Neo: FII buying in November",
+    "https://www.kotakneo.com/news/market-news/fiis-buy-84290-crore-in-november-after-two-months-of-selling/"
+   ],
+   [
+    "Angel One: top gainers and losers, 16 Nov 2026",
+    "https://www.angelone.in/news/market-updates/top-gainers-and-losers-on-november-16-2026-max-healthcare-institute-and-tata-consumer-gain-while-tata-motors-pv-drops-over-8"
+   ],
+   [
+    "Trendlyne: market live, 16 Nov 2026",
+    "https://trendlyne.com/posts/5954365/market-trades-higher-hindalco-s-arm-to-divest-chinese-entities-for-265-million"
    ],
    [
     "Business Today: markets next week",
     "https://www.businesstoday.in/markets/stocks/story/markets-next-week-key-triggers-that-could-move-dalal-street-return-of-fiis-nvidia-earnings-inflation-and-us-trade-deal-567496-2026-11-15"
-   ],
-   [
-    "The Financial Economy: Nifty outlook next week",
-    "https://www.thefinancialeconomy.com/nifty-outlook-next-week/"
-   ],
-   [
-    "Univest: market prediction for 16 Nov",
-    "https://univest.in/blogs/stock-market-prediction-for-tomorrow-2"
-   ],
-   [
-    "BhaavBrief: MCX prices",
-    "https://bhaavbrief.in/markets"
-   ],
-   [
-    "Goodreturns: gold & silver, 14 Nov 2026",
-    "https://www.goodreturns.in/news/gold-rates-silver-rates-today-14-11-2026-live-india-gold-prices-silver-price-mcx-24k-22k-18k-gold-1546939.html"
-   ],
-   [
-    "Quantsapp: GIFT Nifty, 07:11 IST 16 Nov",
-    "https://www.quantsapp.com/gift-nifty"
-   ],
-   [
-    "DSIJ: pre-market update, 16 Nov 2026",
-    "https://insights.dsij.in/dsijarticledetail/pre-market-update-gift-nifty-signals-positive-opening-oil-prices-inflation-and-global-technology-selloff-remain-key-concerns-60450"
    ]
   ]
  },

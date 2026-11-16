@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-16",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · सोमवार, 16 नवंबर 2026",
+   "summary": "Sensex +512 and Nifty at 25,291 on FMCG and bank buying while mid and small caps fell; sector moves, top gainers and losers, record FII buying, weak Asia, results news, gold and silver, and tomorrow's events.",
+   "file": "/videos/2026-11-16-evening.mp4",
+   "poster": "/videos/2026-11-16-evening.jpg",
+   "seconds": 267
+  },
+  {
+   "date": "2026-11-16",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 16 नवंबर 2026",
    "summary": "Two latest open calls from a SEBI-registered firm: Waaree Energies and Blue Star (Anand Rathi, 13 Nov), with entry, target and stop-loss.",
