@@ -56,7 +56,30 @@ git add -A && git commit -m "Daily update <date> <slot>" && git -c push.negotiat
 ```
 Netlify builds from `main` and publishes in 1–2 minutes.
 
-## 5. Facebook (via Metricool connector)
+## 5. YouTube (via vidIQ connector) — publish automatically, approved by the owner
+The owner has approved automatic public uploads of every morning and evening video to the channel
+**BJ's TIPS (@bjstips)**, platformAccountId `UCZeKehKnTpwSsvGhs8yJCZg`. Do not post to any other channel.
+1. Wait until the Netlify deploy is live (poll `https://jhunjhunwalatips.netlify.app/data/videos.json` with WebFetch
+   until it lists today's video, max ~5 min).
+2. `vidiq_video_upload` with url `https://jhunjhunwalatips.netlify.app/videos/<date>-<slot>.mp4`.
+3. `vidiq_social_post_draft_create` with the uploadId, destination YOUTUBE / `UCZeKehKnTpwSsvGhs8yJCZg`,
+   `privacyStatus:"public"`, `categoryId:25`, title in this pattern (≤100 chars):
+   `सुबह की मार्केट खबर | 16 नवंबर 2026 | Nifty, Sensex, GIFT Nifty, FII | BJ's Share Tips`
+   (evening: `शाम की मार्केट खबर | <date in Hindi> | Nifty, Sensex Closing | BJ's Share Tips`),
+   tags: stock market news, share market news hindi, nifty 50, sensex, gift nifty, bank nifty, FII DII,
+   market update, stock market today, share bazaar, BJ's Share Tips, IPO, hindi news.
+   Description: Hindi title line; 2–3 English lines summarising the video with key numbers;
+   "👉 Research calls from SEBI-registered firms, live prices and the full report: https://jhunjhunwalatips.netlify.app";
+   "🔔 Subscribe for Hindi market updates every trading day at 8 AM and 6 PM.";
+   "⚠️ Disclaimer: This video is for information only and is not investment advice. BJ's Share Tips is not a
+   SEBI-registered investment adviser or research analyst. Investments in the securities market are subject to
+   market risks. Read all related documents carefully before investing.";
+   then: #StockMarketNews #Nifty50 #Sensex #StockMarketIndia #BJsShareTips #MarketUpdate
+4. `vidiq_social_post_publish` with the postId and revision (pre-approved by the owner for this channel and
+   format only), then `vidiq_social_post_status` until done; include the YouTube link in the summary.
+   If the channel needs re-authorisation, skip and say so in the summary.
+
+## 6. Facebook (via Metricool connector)
 Call `getBrandSettings`. If a brand for BJ's Share Tips has a Facebook page connected, schedule a Facebook
 `REEL` (facebookData.type "REEL") for ~10 minutes from now with media
 `https://raw.githubusercontent.com/accountssdpl-png/jhunjhunwalatips/main/public/videos/<date>-<slot>.mp4`
@@ -65,6 +88,6 @@ the line "For information only, not investment advice. Investments are subject t
 then 6 hashtags: #StockMarketNews #Nifty50 #Sensex #StockMarketIndia #BJsShareTips #MarketUpdate.
 If no such brand exists, skip and mention it in the summary. Never post to other brands.
 
-## 6. Report
+## 7. Report
 Send a short summary: what was published (new calls with firm names, outcomes changed, video length),
-the Facebook status, and anything skipped and why.
+the YouTube link, the Facebook status, and anything skipped and why.
