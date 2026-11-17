@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-17",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · मंगलवार, 17 नवंबर 2026",
+   "summary": "Sensex +427 and Nifty at 25,387 for a second day of gains as Bank Nifty hit a record on PSU-bank and realty buying while IT fell; top gainers and losers, FII buying, weak Asia, gold and silver, key levels and tomorrow's events.",
+   "file": "/videos/2026-11-17-evening.mp4",
+   "poster": "/videos/2026-11-17-evening.jpg",
+   "seconds": 256
+  },
+  {
+   "date": "2026-11-17",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 17 नवंबर 2026",
    "summary": "Two newest open research calls from SEBI-registered firms: APL Apollo Tubes and Indus Towers (both Anand Rathi, 16 Nov 2026) with entry, target and stop-loss.",
