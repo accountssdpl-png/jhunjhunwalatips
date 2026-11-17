@@ -1,6 +1,15 @@
 {
  "videos": [
   {
+   "date": "2026-11-17",
+   "slot": "morning",
+   "title": "सुबह की मार्केट खबर · मंगलवार, 17 नवंबर 2026",
+   "summary": "Monday's close (Nifty 25,291, Bank Nifty record), flat GIFT Nifty, US tech selloff before Nvidia results, weak Asia, FII buying, crude and rupee, Q2 results news, this week's IPOs and key levels.",
+   "file": "/videos/2026-11-17-morning.mp4",
+   "poster": "/videos/2026-11-17-morning.jpg",
+   "seconds": 253
+  },
+  {
    "date": "2026-11-16",
    "slot": "evening",
    "title": "शाम की मार्केट खबर · सोमवार, 16 नवंबर 2026",
