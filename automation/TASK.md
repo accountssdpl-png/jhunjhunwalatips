@@ -121,3 +121,8 @@ Starts ~8:33 AM IST on weekdays; video live on the site and YouTube by ~8:50 AM.
    site link, the disclaimer from section 5 plus "These calls are by the SEBI-registered firms named above, not by BJ's Share Tips.",
    hashtags `#Shorts #StockMarketIndia #Nifty50 #BJsShareTips #ShareMarket`.
 7. Report: the two calls and firms, video length, YouTube link.
+
+## FII data (public/data/fii.json)
+- Daily FII/DII cash figures load live from NSE (`/api/fiidii`, nseindia.in) — nothing to edit.
+- In the evening run, refresh `sectors` (asOf, text, url) when NSDL/press publish new fortnightly or month-to-date FPI flows. Sector-level only; never invent stock-wise daily FII buying.
+- After each quarter's shareholding filings (mid-Jan/Apr/Jul/Oct), replace `quarter`, `up`, `down` (top 10 each by FII % change) with figures from a public source and set `source`.

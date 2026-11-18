@@ -143,6 +143,7 @@ td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 /* commodities */
 .cm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .cm div{padding:14px 16px}.cm span{display:block;font-size:12.5px;font-weight:700;color:var(--mut)}.cm b{display:block;font:800 22px 'Plus Jakarta Sans',Inter,sans-serif;white-space:nowrap}.cm i{font-style:normal;font-size:13px;font-weight:700}
+@media(max-width:720px){.fq{grid-template-columns:1fr!important}}
 .cm em{display:block;font-style:normal;font-size:11.5px;color:var(--mut)}
 @media(max-width:900px){.cm{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .tv{min-height:420px;overflow:hidden}
@@ -208,6 +209,15 @@ footer ul{margin:6px 0 0;padding-left:18px}footer li{margin-bottom:4px}
   <div class="ph mt"><div><h2>Crude oil &amp; commodities</h2><p class="sub">Live Brent and WTI crude, gold and the rupee, plus MCX crude.</p></div><a class="btn line" href="#commodities">All commodities →</a></div>
   <div class="card pad" style="padding:8px 10px;min-height:90px"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>{"symbols":[{"proName":"OANDA:BCOUSD","title":"Brent crude ($)"},{"proName":"OANDA:WTICOUSD","title":"WTI crude ($)"},{"proName":"OANDA:NATGASUSD","title":"Natural gas ($)"},{"proName":"OANDA:XAUUSD","title":"Gold ($/oz)"},{"proName":"FX_IDC:USDINR","title":"USD/INR"}],"isTransparent":true,"showSymbolLogo":true,"colorTheme":"light","locale":"en"}</script></div></div>
   <div class="cm" id="crude" style="margin-top:12px"></div>
+
+  <div class="ph mt"><div><h2>FII &amp; DII activity</h2><p class="sub">Who is buying: daily cash-market flows from NSE, and the stocks where foreign investors added or cut the most last quarter.</p></div></div>
+  <div class="cm fd" id="fdToday" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="card">Loading NSE data…</div></div>
+  <div class="asof" id="fdAsOf"></div>
+  <div class="fq" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px">
+    <div class="card pad"><h3 style="margin:0 0 4px">FIIs added most</h3><div class="small" id="fqQ1"></div><table class="stack"><thead><tr><th>Stock</th><th class="r">Jun</th><th class="r">Sep</th><th class="r">Change</th><th class="r">Price</th></tr></thead><tbody id="fqUp"></tbody></table></div>
+    <div class="card pad"><h3 style="margin:0 0 4px">FIIs cut most</h3><div class="small" id="fqQ2"></div><table class="stack"><thead><tr><th>Stock</th><th class="r">Jun</th><th class="r">Sep</th><th class="r">Change</th><th class="r">Price</th></tr></thead><tbody id="fqDn"></tbody></table></div>
+  </div>
+  <p class="small" id="fqNote" style="margin-top:8px"></p>
 
   <div class="ph mt"><div><h2>Why the market moved</h2><p class="sub" id="whyLbl"></p></div></div>
   <div class="why" id="why"></div>
@@ -464,12 +474,25 @@ setInterval(()=>{if(mktOpen())pull()},60000);
 let LV=null;
 const n5px=s=>{const q=LV&&LV.quotes[s.toUpperCase()];if(!q||q.p==null)return '<td class="r" data-l="Price">—</td><td class="r" data-l="Change">—</td>';const cl=q.pc==null?'':q.pc>=0?'pos':'neg';return `<td class="r" data-l="Price"><b>${q.p.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})}</b></td><td class="r ${cl}" data-l="Change">${q.pc==null?'—':(q.pc>=0?'+':'')+q.pc.toFixed(2)+'%'}</td>`};
 function liveNote(){if(!LV)return '';const t=LV.asOf?new Date(LV.source==='NSE'?LV.asOf.replace(/(\d+)-(\w+)-(\d+)/,'$2 $1 $3')+' GMT+0530':LV.asOf):null;const tm=t&&!isNaN(t)?t.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}):'';return `${mktOpen()?'Live':'Last'} prices from ${LV.source}${tm?' · as of '+tm+' IST':''}${LV.source==='NSE'?'':' · may be delayed'}${mktOpen()?' · refreshes every minute':' · market closed'}`}
-async function pullLive(){try{const ex=[...new Set(CALLS.filter(c=>c.symbol&&c.exchange!=='BSE').map(c=>c.symbol.toUpperCase()))].sort().join(',');
+async function pullLive(){try{const ex=[...new Set([...CALLS.filter(c=>c.symbol&&c.exchange!=='BSE').map(c=>c.symbol.toUpperCase()),...(FQ?[...FQ.up,...FQ.down].map(x=>x.s):[])])].sort().join(',');
   const r=await fetch('/api/live?extra='+encodeURIComponent(ex));if(!r.ok)return;LV=await r.json();
   for(const [k,q] of Object.entries(LV.quotes))LIVE[k+'.NSE']={code:k+'.NSE',price:q.p,chg:q.c,pct:q.pc};
   $('live').classList.add('ok');$('liveTxt').textContent=liveNote();if($('n5live'))$('n5live').textContent=liveNote();
-  render();if(N5&&$('p-nse500').classList.contains('on'))renderN500()}catch(e){console.error(e)}}
+  render();renderFq();if(N5&&$('p-nse500').classList.contains('on'))renderN500()}catch(e){console.error(e)}}
 setInterval(()=>{if(mktOpen()&&!document.hidden)pullLive()},60000);
+
+
+/* ---- FII / DII ---- */
+let FQ=null;
+const crs=v=>v==null?'—':'₹'+Math.abs(v).toLocaleString('en-IN',{maximumFractionDigits:0})+' cr';
+async function loadFii(){try{const r=await fetch('/api/fiidii');const d=await r.json();if(!r.ok)throw Error(d.error);
+  $('fdToday').innerHTML=d.rows.map(x=>`<div class="card"><span>${/DII/.test(x.cat)?'DIIs (domestic institutions)':'FIIs / FPIs (foreign investors)'}</span><b class="${x.net>=0?'pos':'neg'}">${x.net>=0?'Net buy ':'Net sell '}${crs(x.net)}</b><em>Bought ${crs(x.buy)} · Sold ${crs(x.sell)}</em></div>`).join('');
+  $('fdAsOf').textContent=`Cash market, ${d.rows[0].date} · Source: NSE${d.cached?' (saved copy)':''}`}catch(e){$('fdToday').innerHTML='<div class="card">Daily FII/DII figures could not be loaded from NSE right now.</div>'}
+ try{FQ=await (await fetch('/data/fii.json')).json();$('fqQ1').textContent=$('fqQ2').textContent=FQ.quarter;renderFq();if(CALLS.length)pullLive();
+  $('fqNote').innerHTML=`${safe(FQ.note)} Source: <a href="${safe(FQ.source.url)}" target="_blank" rel="noopener noreferrer">${safe(FQ.source.name)}</a>. <b>Latest sector flows (${safe(FQ.sectors.asOf)}):</b> ${safe(FQ.sectors.text)} <a href="${safe(FQ.sectors.url)}" target="_blank" rel="noopener noreferrer">Source</a>. FII buying or selling is information, not a recommendation to buy or sell.`}catch(e){}}
+function renderFq(){if(!FQ)return;const row=x=>{const q=LV&&LV.quotes[x.s],d=x.to-x.from;return `<tr><td data-l="Stock"><b>${safe(x.n)}</b><br><span class="small">${safe(x.s)}</span></td><td class="r" data-l="Jun">${x.from.toFixed(2)}%</td><td class="r" data-l="Sep">${x.to.toFixed(2)}%</td><td class="r ${d>=0?'pos':'neg'}" data-l="Change">${d>=0?'+':''}${d.toFixed(2)}</td><td class="r" data-l="Price">${q&&q.p!=null?money(q.p)+(q.pc!=null?`<br><span class="small ${q.pc>=0?'pos':'neg'}">${q.pc>=0?'+':''}${q.pc.toFixed(2)}%</span>`:''):'—'}</td></tr>`};
+ $('fqUp').innerHTML=FQ.up.map(row).join('');$('fqDn').innerHTML=FQ.down.map(row).join('')}
+loadFii();
 
 /* ---- latest news per stock (Google News, publisher links) ---- */
 const SNEWS=new Map();
