@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-18",
+   "slot": "tips",
+   "title": "आज के 2 रिसर्च कॉल्स · 18 नवंबर 2026",
+   "summary": "Two newest open research calls from SEBI-registered firms: Indus Towers and Apollo Hospitals (both Anand Rathi, 16 Nov 2026) with entry, target and stop-loss.",
+   "file": "/videos/2026-11-18-tips.mp4",
+   "poster": "/videos/2026-11-18-tips.jpg",
+   "seconds": 49
+  },
+  {
+   "date": "2026-11-18",
    "slot": "morning",
    "title": "सुबह की मार्केट खबर · बुधवार, 18 नवंबर 2026",
    "summary": "GIFT Nifty points to a weak start after Nifty’s 25,387 close and Bank Nifty’s record; Nvidia’s strong results lift Asia, FII buying of ₹4,195 cr, crude near $93, stocks in news, IPOs and key Nifty levels.",
