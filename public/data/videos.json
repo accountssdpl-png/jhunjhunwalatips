@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-18",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · बुधवार, 18 नवंबर 2026",
+   "summary": "Sensex −500 and Nifty at 25,228 as profit booking, a 2.5% fall in metals and Titan’s 5.3% drop ended a two-day rise; sector moves, top gainers and losers, FII buying, gold and silver slide, Asia cues and tomorrow’s events.",
+   "file": "/videos/2026-11-18-evening.mp4",
+   "poster": "/videos/2026-11-18-evening.jpg",
+   "seconds": 264
+  },
+  {
+   "date": "2026-11-18",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 18 नवंबर 2026",
    "summary": "Two newest open research calls from SEBI-registered firms: Indus Towers and Apollo Hospitals (both Anand Rathi, 16 Nov 2026) with entry, target and stop-loss.",
