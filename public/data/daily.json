@@ -1,182 +1,185 @@
 {
- "updatedAt": "2026-11-18T17:34:00+05:30",
+ "updatedAt": "2026-11-19T20:05:00+05:30",
  "brief": {
-  "date": "Wednesday, 18 November 2026",
-  "asOf": "Closing levels: Wednesday 18 Nov 2026 (NSE/BSE close, 3:30 PM IST)",
+  "date": "Thursday, 19 November 2026",
+  "asOf": "Closing levels: Thursday 19 Nov 2026 (NSE/BSE close, 3:30 PM IST)",
   "indices": [
    {
     "name": "NIFTY 50",
     "sym": "NSEI.INDX",
-    "val": 25227.95,
-    "chg": -159.45,
-    "pct": -0.63,
-    "note": "Day range 25,141.80 – 25,390.80 (Angel One)"
+    "val": 25514.3,
+    "chg": 286.35,
+    "pct": 1.14,
+    "note": "Highest close in about nine months, after a gap-down start (Marketcalls)"
    },
    {
     "name": "SENSEX",
     "sym": "BSESN.INDX",
-    "val": 82031.81,
-    "chg": -500.38,
-    "pct": -0.61
+    "val": 83021.75,
+    "chg": 989.94,
+    "pct": 1.21
    },
    {
     "name": "NIFTY BANK",
     "sym": "NSEBANK.INDX",
-    "val": 62038.65,
-    "chg": -234.6,
-    "pct": -0.38,
-    "note": "Close per Marketcalls post-market report"
+    "val": 63063.0,
+    "chg": 1024.35,
+    "pct": 1.65,
+    "note": "First close above 63,000 (Marketcalls)"
    },
    {
     "name": "INDIA VIX",
-    "val": 15.56,
-    "chg": 0.04,
-    "pct": 0.26,
-    "note": "Intraday range 14.58 – 16.02 (HDFC Sky)"
+    "val": 15.9,
+    "chg": 0.34,
+    "pct": 2.12,
+    "note": "Marketcalls post-market report"
    }
   ],
-  "whyLbl": "Why the market fell on Wednesday",
+  "whyLbl": "Why the market rose on Thursday",
   "why": [
    {
-    "b": "Profit booking",
-    "t": "Nifty snapped a two-day rise after a 13% rally in 12 sessions left it overbought; Nifty and Sensex were up about 9.4% and 10.2% in November through Tuesday (HDFC Sky)."
+    "b": "Auto +4.40%",
+    "t": "Autos led as raw-material prices softened; Maruti Suzuki +7.30% to ₹13,554, M&M +4.66%, Eicher +4.62% (Marketcalls, Kotak Neo)."
    },
    {
-    "b": "Metal −2.46%",
-    "t": "Metals fell on weaker global metal prices, a stronger dollar and bets on a US rate hike in December; Hindalco −2.99% (Kotak Neo, Upstox)."
+    "b": "FMCG +2.08%",
+    "t": "Buying on hopes of input-cost relief; HUL +3.75% to ₹2,067.70 (Marketcalls)."
    },
    {
-    "b": "Titan −5.30%",
-    "t": "Biggest Nifty loser; Nifty Consumer Durables index −3.13%, the worst sector (Upstox)."
+    "b": "Bank Nifty 63,063",
+    "t": "Banks extended gains; Nifty Bank +1.65% to a first close above 63,000, PSU Bank +2.28% (Marketcalls)."
    },
    {
-    "b": "103.79",
-    "t": "Dollar index +0.30%, a 19-month high on hawkish Fed comments; rupee still closed 7 paise stronger at 93.44 (provisional, PTI)."
+    "b": "Copper low",
+    "t": "AC makers Voltas, Blue Star and PG Electroplast rallied up to 6% as copper hit a seven-month low (Kotak Neo)."
    },
    {
-    "b": "Midcap −1.22%",
-    "t": "Broad selling: 2,485 NSE stocks fell and 1,098 rose; Smallcap 100 −0.35% (Upstox)."
+    "b": "IT −1.10%",
+    "t": "IT was the only big drag: Infosys −1.52%, Tech Mahindra −1.43%, TCS −1.42% (Marketcalls)."
    },
    {
-    "b": "FII flows",
-    "t": "FIIs bought ₹4,195 cr on 17 Nov, a 12th straight day of buying; November inflows crossed a record $10 bn (Kotak Neo, CNBC-TV18). 18 Nov provisional figures were not out when this was written."
+    "b": "FII +₹5,867 cr",
+    "t": "FIIs bought ₹5,866.78 cr on 18 Nov; November FII net buying through 18 Nov is ₹94,229 cr (Kotak Neo, Tapetide). 19 Nov provisional figures were not out when this was written."
    }
   ],
-  "asiaLbl": "Asian markets Wednesday 18 Nov, mid-session levels (AP); Europe: no figures in sources read",
+  "asiaLbl": "Global cues on Thursday 19 Nov (Marketcalls, evening IST)",
   "asia": [
-   {
-    "n": "KOSPI",
-    "c": "🇰🇷 South Korea",
-    "v": "5,062.92",
-    "p": 1.9,
-    "mon": "Chipmakers rose after Nvidia results (AP)"
-   },
    {
     "n": "Nikkei 225",
     "c": "🇯🇵 Japan",
-    "v": "59,024.28",
-    "p": 0.3,
-    "mon": "After the lunch break (AP)"
+    "v": "59,444.21",
+    "p": 0.71,
+    "mon": "Closed higher"
    },
    {
     "n": "Hang Seng",
     "c": "🇭🇰 Hong Kong",
-    "v": "23,264.96",
-    "p": -1.0,
-    "mon": "Mid-session (AP)"
+    "v": "22,841.62",
+    "p": -1.95,
+    "mon": "Weaker"
    },
    {
-    "n": "Shanghai Composite",
-    "c": "🇨🇳 China",
-    "v": "3,578.72",
-    "p": -0.2,
-    "mon": "Mid-session (AP)"
+    "n": "DAX",
+    "c": "🇩🇪 Germany",
+    "v": "25,825.24",
+    "p": 0.35,
+    "mon": "Europe, during the session"
    },
    {
-    "n": "S&P/ASX 200",
-    "c": "🇦🇺 Australia",
-    "v": "8,821.80",
-    "p": -0.7,
-    "mon": "Mid-session (AP)"
+    "n": "FTSE 100",
+    "c": "🇬🇧 UK",
+    "v": "10,526.02",
+    "p": -0.24,
+    "mon": "Europe, during the session"
+   },
+   {
+    "n": "S&P 500 futures",
+    "c": "🇺🇸 US",
+    "v": "7,424.50",
+    "p": 1.14,
+    "mon": "Futures"
+   },
+   {
+    "n": "Nasdaq 100 futures",
+    "c": "🇺🇸 US",
+    "v": "27,743.50",
+    "p": 2.05,
+    "mon": "Futures"
    }
   ],
-  "weekLbl": "Index and sector moves today, Wednesday 18 November",
+  "weekLbl": "Index and sector moves today, Thursday 19 November",
   "week": [
    {
     "g": "Benchmarks"
    },
    {
     "n": "Nifty 50",
-    "v": -0.63
+    "v": 1.14
    },
    {
     "n": "Sensex",
-    "v": -0.61
+    "v": 1.21
    },
    {
     "n": "Nifty Bank",
-    "v": -0.38
+    "v": 1.65
    },
    {
     "g": "Broader market"
    },
    {
     "n": "Midcap 100",
-    "v": -1.22
+    "v": 1.05
    },
    {
     "n": "Smallcap 100",
-    "v": -0.35
+    "v": 0.67
    },
    {
     "g": "Sectors"
    },
    {
+    "n": "Auto",
+    "v": 4.4
+   },
+   {
     "n": "PSU Bank",
-    "v": 0.59
-   },
-   {
-    "n": "Media",
-    "v": 0.46
-   },
-   {
-    "n": "Pharma",
-    "v": 0.15
+    "v": 2.28
    },
    {
     "n": "FMCG",
-    "v": -0.09
+    "v": 2.08
    },
    {
-    "n": "Financial Services",
-    "v": -0.7
+    "n": "Private Bank",
+    "v": 1.39
    },
    {
-    "n": "Realty",
-    "v": -0.85
-   },
-   {
-    "n": "IT",
-    "v": -1.24
-   },
-   {
-    "n": "Auto",
-    "v": -1.35
+    "n": "Energy",
+    "v": 1.14
    },
    {
     "n": "Metal",
-    "v": -2.46
+    "v": 0.64
    },
    {
-    "n": "Consumer Durables",
-    "v": -3.13
+    "n": "Pharma",
+    "v": 0.62
+   },
+   {
+    "n": "Realty",
+    "v": 0.45
+   },
+   {
+    "n": "Media",
+    "v": -0.06
+   },
+   {
+    "n": "IT",
+    "v": -1.1
    }
   ],
   "fii": [
-   {
-    "d": "11 Nov",
-    "v": 12563
-   },
    {
     "d": "12 Nov",
     "v": 7831
@@ -192,80 +195,99 @@
    {
     "d": "17 Nov",
     "v": 4195
+   },
+   {
+    "d": "18 Nov",
+    "v": 5867
    }
   ],
   "totals": [
    [
-    "FII net, 17 Nov",
-    "+₹4,195.38 cr",
+    "FII net, 18 Nov",
+    "+₹5,866.78 cr",
     "pos"
    ],
    [
-    "DII net, 17 Nov",
-    "+₹196.93 cr",
+    "DII net, 18 Nov",
+    "−₹3,159.90 cr",
+    "neg"
+   ],
+   [
+    "FII net, November till 18 Nov",
+    "+₹94,229.31 cr",
     "pos"
    ],
    [
-    "FII net, November till 17 Nov",
-    "+₹88,362.53 cr",
-    "pos"
-   ],
-   [
-    "DII net, November till 17 Nov",
-    "−₹52,410.76 cr",
+    "DII net, November till 18 Nov",
+    "−₹55,570.66 cr",
     "neg"
    ]
   ],
   "news": [
    {
-    "c": "Titan Company",
-    "t": "Top Nifty loser, −5.30% to ₹4,648.10",
-    "p": -5.3
+    "c": "Maruti Suzuki",
+    "t": "Top Nifty gainer, +7.30% to ₹13,554",
+    "p": 7.3
    },
    {
-    "c": "HDFC Life",
-    "t": "−3.29% to ₹575.50",
-    "p": -3.29
+    "c": "Mahindra & Mahindra",
+    "t": "+4.66% to ₹3,515.60",
+    "p": 4.66
    },
    {
-    "c": "Hindalco",
-    "t": "−2.99% to ₹900 as metals fell",
-    "p": -2.99
+    "c": "Eicher Motors",
+    "t": "+4.62% to ₹8,056",
+    "p": 4.62
    },
    {
-    "c": "State Bank of India",
-    "t": "Top Nifty gainer, +2.38% to ₹1,135; PSU Bank index +0.59%",
-    "p": 2.38
+    "c": "Hindustan Unilever",
+    "t": "+3.75% to ₹2,067.70",
+    "p": 3.75
    },
    {
-    "c": "Cipla",
-    "t": "+2.13% to ₹1,417.50 after US FDA cleared its InvaGen (New York) plant with no action indicated",
-    "p": 2.13
+    "c": "Infosys",
+    "t": "Top Nifty loser, −1.52% to ₹1,091.90",
+    "p": -1.52
    },
    {
-    "c": "IIFL Finance",
-    "t": "Rose 4% after Fairfax Financial exited its stake via a $370 mn block deal",
-    "p": null
+    "c": "TCS",
+    "t": "−1.42% to ₹2,345.80",
+    "p": -1.42
    },
    {
     "c": "Apollo Hospitals",
-    "t": "+1.25% to ₹8,821",
-    "p": 1.25
+    "t": "−1.03% to ₹8,730.50",
+    "p": -1.03
    },
    {
-    "c": "BSE Ltd",
-    "t": "−2.83% to ₹3,755.70",
-    "p": -2.83
+    "c": "PB Fintech",
+    "t": "Fell 6% to ₹970 after co-founder Alok Bansal said he will step back from an executive role (Kotak Neo)",
+    "p": null
+   },
+   {
+    "c": "LT Foods",
+    "t": "Jumped 8% on the Maya Kaimal acquisition for $5.8 mn (Kotak Neo)",
+    "p": null
+   },
+   {
+    "c": "Alkem Laboratories",
+    "t": "USFDA warning letter for its Daman facility (Marketcalls)",
+    "p": null
+   },
+   {
+    "c": "NLC India",
+    "t": "Subsidiary NLC India Renewables filed IPO papers: fresh issue up to ₹3,300 cr (Multibagg)",
+    "p": null
    }
   ],
   "cal": [
    {
-    "d": "Thu 19 Nov",
-    "t": "US FOMC minutes at 12:30 AM IST. Mahanadi Coalfields IPO opens (19–23 Nov, ₹129–136, OFS by Coal India)."
-   },
-   {
     "d": "Fri 20 Nov",
     "t": "Crystal Crop Protection IPO closes (18–20 Nov, ₹259–272)."
+   },
+   {
+    "d": "Mon 23 Nov",
+    "t": "Mahanadi Coalfields IPO closes (₹8,981 cr OFS by Coal India); weekly Nifty expiry."
    },
    {
     "d": "Tue 24 Nov",
@@ -276,117 +298,101 @@
     "t": "US Q3 GDP (2nd estimate) and October PCE inflation."
    },
    {
+    "d": "2–4 Dec",
+    "t": "RBI MPC meeting, decision on 4 Dec; SBI economists expect a 25 bp hike after October CPI of 6.09% (Marketcalls)."
+   },
+   {
     "d": "8–9 Dec",
-    "t": "Next US FOMC meeting; CME FedWatch showed a 95.7% chance of a 25 bp hike (Analytics Insight)."
+    "t": "US FOMC; minutes showed most officials expect further hikes, some open to 50 bp (Marketcalls, Multibagg)."
    }
   ],
   "levels": [
    {
-    "h": "Nifty 50 · 25,228",
-    "t": "Today’s range 25,141.80 – 25,390.80 (Angel One). No named-analyst levels for Thursday in the sources read this evening; this morning Vatsal Bhuva (LKP Securities) had put support at 25,200 and resistance at 25,500."
+    "h": "Nifty 50 · 25,514",
+    "t": "Options data (Marketcalls, no named analyst): biggest call open interest at 26,000 (resistance) and put base at 25,000 for the 23 Nov expiry; 25,500 put base on the December series. Nifty slipped below 25,150 early before recovering."
    },
    {
-    "h": "Bank Nifty · 62,039",
-    "t": "Closed −0.38% (Marketcalls). No named-analyst levels for Thursday in the sources read this evening."
+    "h": "Bank Nifty · 63,063",
+    "t": "First close above 63,000, +1.65% (Marketcalls). No named-analyst levels for Friday in the sources read this evening."
    },
    {
-    "h": "Sensex · 82,032",
-    "t": "Down 500.38 points. No analyst levels for Thursday in the sources read this evening."
+    "h": "Sensex · 83,022",
+    "t": "Up 989.94 points. No analyst levels for Friday in the sources read this evening."
    }
   ],
   "commodities": {
-   "asOf": "MCX and Brent/WTI: Wed 18 Nov ~3:37 PM IST (Kotak Neo) · COMEX: 4:20 PM IST (Marketcalls) · rupee: provisional close (PTI)",
+   "asOf": "MCX and Brent/WTI: Thu 19 Nov ~3:38 PM IST (Kotak Neo) · international gold/silver and rupee spot: Marketcalls evening report",
    "mcx": [
     {
      "n": "Gold (Dec)",
      "u": "₹ / 10 g",
-     "v": "₹1,31,106",
-     "p": -2.32
+     "v": "₹1,29,275",
+     "p": -0.42
     },
     {
      "n": "Silver (Dec)",
      "u": "₹ / kg",
-     "v": "₹1,63,730",
-     "p": -3.52
+     "v": "₹1,61,091",
+     "p": 0.22
     }
    ],
    "intl": [
     {
-     "n": "COMEX gold",
+     "n": "Gold (international)",
      "u": "$ / oz",
-     "v": "$3,771.90",
-     "p": -2.39
+     "v": "$3,730.80",
+     "p": -0.3
     },
     {
-     "n": "COMEX silver",
+     "n": "Silver (international)",
      "u": "$ / oz",
-     "v": "$45.67",
-     "p": -3.42
+     "v": "$45.07",
+     "p": 0.16
     },
     {
      "n": "Brent crude (Jan)",
      "u": "$ / barrel",
-     "v": "$92.11",
+     "v": "$92.64",
      "p": null
     },
     {
      "n": "WTI crude (Jan)",
      "u": "$ / barrel",
-     "v": "$83.37",
+     "v": "$82.80",
      "p": null
     },
     {
      "n": "USD / INR",
-     "u": "₹ per $ · provisional close",
-     "v": "₹93.44",
+     "u": "₹ per $ · spot",
+     "v": "₹93.29",
      "p": null
     }
    ]
   },
   "sources": [
    [
-    "HDFC Sky: market close report, 18 Nov 2026",
-    "https://hdfcsky.com/news/market-close-report-today-november-18-2026-nifty-sensex-decline-after-recent-rally-as-profit-booking-sets-in"
+    "Kotak Neo: closing bell, 19 Nov 2026",
+    "https://www.kotakneo.com/news/market-news/closing-bell-19-november-2026-sensex-nifty-end-higher-as-bulls-return-to-dalal-street/"
    ],
    [
-    "Kotak Neo: closing bell, 18 Nov 2026",
-    "https://www.kotakneo.com/news/market-news/market-wrap-18-november-2026-profit-booking-and-a-drag-in-metal-stocks-pull-benchmarks-down/"
+    "Marketcalls: post-market report, 19 Nov 2026",
+    "https://www.marketcalls.in/futures-and-options/post-market-report-19-november-2026.html"
    ],
    [
-    "Upstox: market wrap, 18 Nov 2026",
-    "https://upstox.com/news/market-news/stocks/market-wrap-nov-18-sensex-falls-500-pts-nifty-50-ends-below-25-250-126-stocks-hits-lower-circuit-titan-company-top-loser/article-203645/"
-   ],
-   [
-    "Marketcalls: post-market report, 18 Nov 2026",
-    "https://www.marketcalls.in/futures-and-options/post-market-report-18-november-2026.html"
-   ],
-   [
-    "Angel One: top gainers and losers, 18 Nov 2026",
-    "https://www.angelone.in/news/market-updates/top-gainers-and-losers-on-november-18-2026-sbi-and-cipla-gain-while-titan-company-drops-over-5"
-   ],
-   [
-    "HDFC Sky: India VIX close, 18 Nov 2026",
-    "https://hdfcsky.com/news/india-vix-closes-at-15-56-up-0-26percent-as-sensex-and-nifty-decline-on-domestic-and-global-cues"
-   ],
-   [
-    "HDFC Sky (PTI): rupee close, 18 Nov 2026",
-    "https://hdfcsky.com/news/rupee-rises-7-paise-to-close-at-93-44-against-us-dollar"
-   ],
-   [
-    "Kotak Neo: FII inflows cross $10 bn, 18 Nov 2026",
-    "https://www.kotakneo.com/news/market-news/fii-inflows-cross-10-billion-in-november-as-nifty-50-falls-on-profit-booking-and-dii-selling/"
+    "Multibagg: market pulse, 19 Nov 2026",
+    "https://www.multibagg.ai/market-pulse/articles/nifty-sensex-rally-november-nineteen-cmwnfve89003e2hmk33nrt38l"
    ],
    [
     "Kotak Neo: FII/DII data",
     "https://www.kotakneo.com/share-market-today/fii-dii-data/"
    ],
    [
-    "AP via News4JAX: Asian markets, 18 Nov 2026",
-    "https://www.news4jax.com/business/2026/11/18/asian-markets-mostly-decline-after-wall-street-losses-as-ai-stocks-swing/"
+    "Tapetide: FII/DII flows, November 2026",
+    "https://tapetide.com/insight/reports/fii-dii-flows/2026-11"
    ],
    [
-    "Analytics Insight: Fed hike odds, 18 Nov 2026",
-    "https://www.analyticsinsight.net/business/gold/mcx-gold-remains-flat-at-rs-134250-as-us-awaits-federal-reserves-minutes-brent-at-usd-9292"
+    "ClearTax: NSE holidays 2026",
+    "https://cleartax.in/s/nse-holidays-2026"
    ],
    [
     "Upstox: Mahanadi Coalfields IPO",
@@ -397,32 +403,112 @@
     "https://groww.in/blog/crystal-crop-protection-ipo-to-open-on-november-18"
    ],
    [
-    "Admiral Markets: FOMC minutes, November 2026",
-    "https://admiralmarkets.com/analytics/traders-blog/fomc-minutes-november-2026"
-   ],
-   [
-    "ClearTax: NSE holidays 2026",
-    "https://cleartax.in/s/nse-holidays-2026"
-   ],
-   [
-    "Business Today: what lies ahead (Vatsal Bhuva), 17 Nov 2026",
-    "https://www.businesstoday.in/markets/stocks/story/sensex-nifty-extend-gains-for-second-session-nifty-bank-hits-record-high-what-lies-ahead-567932-2026-11-17"
-   ],
-   [
     "Anand Rathi: stocks to buy (research picks)",
     "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow"
    ],
    [
-    "5paisa: Indus Towers price, 18 Nov (call outcome)",
-    "https://www.5paisa.com/stocks/industower-share-price"
+    "ICICIdirect: Groww price, 19 Nov (call outcome)",
+    "https://www.icicidirect.com/stocks/billionbrains-garage-ventures-ltd-share-price"
    ],
    [
-    "5paisa: GE Vernova T&D India price, 17 Nov",
-    "https://www.5paisa.com/stocks/gvt&d-share-price"
+    "Kotak Neo: Indus Towers price, 19 Nov (call outcome)",
+    "https://www.kotakneo.com/stocks/indus-towers-share-price/"
+   ],
+   [
+    "Upstox: GE Vernova T&D price, 19 Nov",
+    "https://upstox.com/stocks/ge-vernova-t-d-india-ltd-share-price/INE200A01026/"
+   ],
+   [
+    "5paisa: Apollo Hospitals price, 19 Nov",
+    "https://www.5paisa.com/stocks/APOLLOHOSP"
    ]
   ]
  },
  "calls": [
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "date": "2026-11-19",
+   "timeframe": "Positional",
+   "note": "",
+   "id": "2026-11-19-anandrathi-enrin",
+   "stock": "Siemens Energy India",
+   "symbol": "ENRIN",
+   "entry": 2990,
+   "target": 3200,
+   "stopLoss": 2900
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "date": "2026-11-19",
+   "timeframe": "Positional",
+   "note": "",
+   "id": "2026-11-19-anandrathi-ashokley",
+   "stock": "Ashok Leyland",
+   "symbol": "ASHOKLEY",
+   "entry": 165,
+   "target": 175,
+   "stopLoss": 160
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "date": "2026-11-19",
+   "timeframe": "Positional",
+   "note": "",
+   "id": "2026-11-19-anandrathi-icicigi",
+   "stock": "ICICI Lombard General Insurance",
+   "symbol": "ICICIGI",
+   "entry": 1660,
+   "target": 1735,
+   "stopLoss": 1620
+  },
+  {
+   "exchange": "NSE",
+   "side": "BUY",
+   "status": "open",
+   "cmp": null,
+   "exit": null,
+   "target2": null,
+   "buyRange": "",
+   "publisher": "Anand Rathi Share and Stock Brokers Ltd",
+   "publisherReg": "INH000000834",
+   "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
+   "date": "2026-11-19",
+   "timeframe": "Positional",
+   "note": "",
+   "id": "2026-11-19-anandrathi-bdl",
+   "stock": "Bharat Dynamics",
+   "symbol": "BDL",
+   "entry": 1020,
+   "target": 1150,
+   "stopLoss": 970
+  },
   {
    "exchange": "NSE",
    "side": "BUY",
@@ -442,14 +528,14 @@
    "entry": 4300,
    "target": 4700,
    "stopLoss": 4150,
-   "note": "17 Nov range ₹4,215–4,390 (5paisa)"
+   "note": "19 Nov: day range ₹4,282.70–4,349.40 (Upstox); neither target nor stop-loss hit"
   },
   {
    "exchange": "NSE",
    "side": "BUY",
-   "status": "open",
+   "status": "sl",
    "cmp": null,
-   "exit": null,
+   "exit": 226,
    "target2": null,
    "buyRange": "",
    "publisher": "Anand Rathi Share and Stock Brokers Ltd",
@@ -463,7 +549,7 @@
    "entry": 231.5,
    "target": 242,
    "stopLoss": 226,
-   "note": ""
+   "note": "Stop-loss hit 19 Nov 2026: day low ₹218.08, close ₹220.89 (ICICIdirect)"
   },
   {
    "exchange": "NSE",
@@ -489,12 +575,12 @@
   {
    "exchange": "NSE",
    "side": "BUY",
-   "status": "open",
+   "status": "sl",
    "cmp": null,
-   "exit": null,
+   "exit": 385,
    "target2": null,
    "buyRange": "",
-   "note": "18 Nov: day range ₹387–392 (5paisa, 3:57 PM); neither target nor stop-loss hit",
+   "note": "Stop-loss hit 19 Nov 2026: day low ₹383.30, close ₹387.65 (Kotak Neo)",
    "publisher": "Anand Rathi Share and Stock Brokers Ltd",
    "publisherReg": "INH000000834",
    "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
@@ -515,7 +601,7 @@
    "exit": null,
    "target2": null,
    "buyRange": "",
-   "note": "",
+   "note": "19 Nov: day range ₹8,690–8,810 (5paisa); neither target nor stop-loss hit",
    "publisher": "Anand Rathi Share and Stock Brokers Ltd",
    "publisherReg": "INH000000834",
    "sourceUrl": "https://anandrathi.com/share-market-today/stocks-to-buy-tomorrow",
