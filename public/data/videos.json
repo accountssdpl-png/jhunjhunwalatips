@@ -1,6 +1,15 @@
 {
  "videos": [
   {
+   "date": "2026-11-20",
+   "slot": "morning",
+   "title": "सुबह की मार्केट खबर · शुक्रवार, 20 नवंबर 2026",
+   "summary": "After Thursday's rally (Nifty 25,514, Bank Nifty above 63,000), Wall Street fell about 2% and Nikkei slid up to 4.5% this morning; FII buying of ₹7,411 cr, stocks in news, Nifty levels from named analysts, gold slide, IPOs and the 24 Nov holiday.",
+   "file": "/videos/2026-11-20-morning.mp4",
+   "poster": "/videos/2026-11-20-morning.jpg",
+   "seconds": 257
+  },
+  {
    "date": "2026-11-19",
    "slot": "evening",
    "title": "शाम की मार्केट खबर · गुरुवार, 19 नवंबर 2026",
