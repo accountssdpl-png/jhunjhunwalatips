@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-20",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · शुक्रवार, 20 नवंबर 2026",
+   "summary": "Sensex +898 and Nifty at 25,801 as banks led a second day of gains and Bank Nifty closed at a record 64,635 despite a global AI sell-off; sector moves, top gainers and losers, FII flows, gold slide, Nifty levels and next week's events.",
+   "file": "/videos/2026-11-20-evening.mp4",
+   "poster": "/videos/2026-11-20-evening.jpg",
+   "seconds": 285
+  },
+  {
+   "date": "2026-11-20",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 20 नवंबर 2026",
    "summary": "Two open research calls from Anand Rathi (SEBI RA INH000000834): Siemens Energy India and Ashok Leyland, with entry, target and stop-loss.",
