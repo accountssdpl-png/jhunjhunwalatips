@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-23",
+   "slot": "tips",
+   "title": "आज के 2 रिसर्च कॉल्स · 23 नवंबर 2026",
+   "summary": "Two open research calls from SEBI-registered firms: Reliance Industries (Bonanza Portfolio) and Max Financial Services (Anand Rathi), with entry, target and stop-loss.",
+   "file": "/videos/2026-11-23-tips.mp4",
+   "poster": "/videos/2026-11-23-tips.jpg",
+   "seconds": 57
+  },
+  {
+   "date": "2026-11-23",
    "slot": "morning",
    "title": "सुबह की मार्केट खबर · सोमवार, 23 नवंबर 2026",
    "summary": "After Friday's bank-led rally (Nifty 25,801, Bank Nifty record 64,635), Wall Street crashed (Nasdaq −5.28%) but GIFT Nifty points higher at 26,091; FII buying of ₹10,308 cr, stocks in news, Nifty levels, gold slide, monthly expiry and the 24 Nov holiday.",
