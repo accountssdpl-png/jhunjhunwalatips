@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-23",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · सोमवार, 23 नवंबर 2026",
+   "summary": "Sensex −1,484 and Nifty at 25,350 as profit booking, a 3.2% slide in Bank Nifty and Tata Steel's 8.4% fall dragged markets on expiry day; sector moves, top gainers and losers, FII flows, global cues, gold rebound and the 24 Nov holiday.",
+   "file": "/videos/2026-11-23-evening.mp4",
+   "poster": "/videos/2026-11-23-evening.jpg",
+   "seconds": 254
+  },
+  {
+   "date": "2026-11-23",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 23 नवंबर 2026",
    "summary": "Two open research calls from SEBI-registered firms: Reliance Industries (Bonanza Portfolio) and Max Financial Services (Anand Rathi), with entry, target and stop-loss.",
