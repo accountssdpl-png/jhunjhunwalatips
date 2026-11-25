@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-25",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · बुधवार, 25 नवंबर 2026",
+   "summary": "Sensex +1,502 and Nifty at 25,819 (+1.85%) as FMCG (+3.8%), pharma and private banks led a rebound after the holiday on FII buying, softer crude and a firmer rupee despite a chip-led selloff in Asia; top gainers and losers, gold and silver, Nifty levels and the week's events.",
+   "file": "/videos/2026-11-25-evening.mp4",
+   "poster": "/videos/2026-11-25-evening.jpg",
+   "seconds": 287
+  },
+  {
+   "date": "2026-11-25",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 25 नवंबर 2026",
    "summary": "Two open research calls from Angel One Ltd (SEBI RA INH000000164), 23 Nov: buy Fortis Healthcare and Bajaj Finserv, with entry, target and stop-loss.",
