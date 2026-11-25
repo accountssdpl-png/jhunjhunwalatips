@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-25",
+   "slot": "tips",
+   "title": "आज के 2 रिसर्च कॉल्स · 25 नवंबर 2026",
+   "summary": "Two open research calls from Angel One Ltd (SEBI RA INH000000164), 23 Nov: buy Fortis Healthcare and Bajaj Finserv, with entry, target and stop-loss.",
+   "file": "/videos/2026-11-25-tips.mp4",
+   "poster": "/videos/2026-11-25-tips.jpg",
+   "seconds": 50
+  },
+  {
+   "date": "2026-11-25",
    "slot": "morning",
    "title": "सुबह की मार्केट खबर · बुधवार, 25 नवंबर 2026",
    "summary": "After Tuesday's holiday, GIFT Nifty at 25,740 points to a gap-up from Monday's 25,350 close despite a US chip selloff (Nasdaq −1.5%, Dow above 50,000) and weak Asia; FII buying of ₹5,673 cr, crude, gold, stocks in news, Nifty levels and the week's IPOs and GDP data.",
