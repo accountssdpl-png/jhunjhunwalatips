@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-26",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · गुरुवार, 26 नवंबर 2026",
+   "summary": "Nifty rose 0.25% to 25,885 and Sensex 0.46% to 84,329 as IT (+3.66%) and realty (+3.27%) rallied, while Bank Nifty slipped 0.26% on weak financials.",
+   "file": "/videos/2026-11-26-evening.mp4",
+   "poster": "/videos/2026-11-26-evening.jpg",
+   "seconds": 275
+  },
+  {
+   "date": "2026-11-26",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 26 नवंबर 2026",
    "summary": "Two open research calls from ICICI Securities Ltd (SEBI RA INH000000990), 25 Nov: buy Torrent Pharmaceuticals and sell Bajaj Auto, with entry range, targets and stop-loss.",
