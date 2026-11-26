@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-26",
+   "slot": "tips",
+   "title": "आज के 2 रिसर्च कॉल्स · 26 नवंबर 2026",
+   "summary": "Two open research calls from ICICI Securities Ltd (SEBI RA INH000000990), 25 Nov: buy Torrent Pharmaceuticals and sell Bajaj Auto, with entry range, targets and stop-loss.",
+   "file": "/videos/2026-11-26-tips.mp4",
+   "poster": "/videos/2026-11-26-tips.jpg",
+   "seconds": 54
+  },
+  {
+   "date": "2026-11-26",
    "slot": "morning",
    "title": "सुबह की मार्केट खबर · गुरुवार, 26 नवंबर 2026",
    "summary": "GIFT Nifty at 26,020 points to a gap-up of about 200 points from Wednesday's 25,819 close as Asia rebounds (Nikkei +1.8%, KOSPI +2.1%), while Brent jumps 3.5% to $94.61 on a Saudi refinery attack claim; FII and DII both buyers, stocks in news, Nifty levels, gold, silver and the week's events.",
