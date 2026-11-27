@@ -2,6 +2,15 @@
  "videos": [
   {
    "date": "2026-11-27",
+   "slot": "evening",
+   "title": "शाम की मार्केट खबर · शुक्रवार, 27 नवंबर 2026",
+   "summary": "Sensex fell 989 points to 83,339 and Nifty 1.07% to 25,607 on IT profit-taking, firmer crude and a weaker rupee (92.98), while defence and metal stocks rose; plus top movers, FII data, Asia's rally, gold and silver, Nifty levels and next week's events.",
+   "file": "/videos/2026-11-27-evening.mp4",
+   "poster": "/videos/2026-11-27-evening.jpg",
+   "seconds": 275
+  },
+  {
+   "date": "2026-11-27",
    "slot": "tips",
    "title": "आज के 2 रिसर्च कॉल्स · 27 नवंबर 2026",
    "summary": "Two open research calls from YES Securities (India) Ltd (SEBI RA INH000002376), 26 Nov: buy Avenue Supermarts (DMart) and Dabur India, with buy range, target and stop-loss.",
